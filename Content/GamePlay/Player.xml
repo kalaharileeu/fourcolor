@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameter>
+  <image source="Gameplay/heliblack" width = "96" height = "41">
+    <Effects>SpriteSheetEffect</Effects>
+  </image>
+  <movespeed>100</movespeed>
+  <life>20</life>
+  <animatedtype>largeexplosion</animatedtype>
+</parameter>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="150" height="15" tilewidth="32" tileheight="32">
+<objectgroup name="Object Layer 1" width="150" height="15" visible="0">
+  <object name="Background" type="ScrollingBackground" x="0" y="0" width="32" height="32">
+    <properties>
+      <property name="source" value="SplashScreen/stripepaper"/>
+    </properties>
+  </object>
+</objectgroup>
+ <objectgroup name="Object Layer 2" width="150" height="15">
+  <object name="Glider1" type="Glider" x="200" y="100" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="source" value="Gameplay/Enemy/enemy1"/>
+   </properties>
+  </object>
+  <object name="Glider2" type="Glider" x="250" y="94" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="source" value="Gameplay/Enemy/enemy1"/>
+   </properties>
+  </object>
+  <object name="Glider2" type="Glider" x="300" y="37" width="32" height="32">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="source" value="Gameplay/Enemy/enemy1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
