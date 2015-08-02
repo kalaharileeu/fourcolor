@@ -13,7 +13,10 @@ namespace fourcolors
         int positionx;
         int positiony;
         protected Vector2 velocity;
+<<<<<<< HEAD
         Rectangle deathvector;
+=======
+>>>>>>> 2fa82ea2fc86dd0128829cfefa5c8af7e28e6f96
 
 
         public EnemyGadget(ObjectGroup.MapObject enemyobject)
@@ -22,7 +25,10 @@ namespace fourcolors
             dying = false;
             positionx = enemyobject.x;
             positiony = enemyobject.y;
+<<<<<<< HEAD
             deathvector = new Rectangle();
+=======
+>>>>>>> 2fa82ea2fc86dd0128829cfefa5c8af7e28e6f96
 
             foreach (ObjectGroup.MapObject.Properties.Property p in enemyobject.GetProperties.ListOfProperties)
             {
@@ -36,6 +42,7 @@ namespace fourcolors
             LoadContent();
         }
 
+<<<<<<< HEAD
         public void Dead(Rectangle dv)
         {
             deathvector = dv;
@@ -48,6 +55,8 @@ namespace fourcolors
             return collisionRect;
         }
 
+=======
+>>>>>>> 2fa82ea2fc86dd0128829cfefa5c8af7e28e6f96
         public override void LoadContent()
         {
             image.LoadContent();

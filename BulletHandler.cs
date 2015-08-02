@@ -65,7 +65,11 @@ namespace fourcolors
             listplayerbullets.Add(pb);
         }
 
+<<<<<<< HEAD
         public void clearbullet()
+=======
+       public void clearbullet()
+>>>>>>> 2fa82ea2fc86dd0128829cfefa5c8af7e28e6f96
         {
 
         }
