@@ -31,15 +31,6 @@ namespace fourcolors
             LoadContent();
         }
 
-<<<<<<< HEAD
-        public Rectangle GetCurrentRect()
-        {
-            Rectangle collisionRect = new Rectangle((int)image.Position.X, (int)image.Position.Y, image.Texture.Width, image.Texture.Height);
-            return collisionRect;
-        }
-
-=======
->>>>>>> 2fa82ea2fc86dd0128829cfefa5c8af7e28e6f96
         public bool Dead
         {
             get { return dead; }

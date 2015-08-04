@@ -62,10 +62,6 @@ namespace fourcolors
                    maplistenemies.Add((EnemyGadget)Activator.CreateInstance(Type.GetType("fourcolors." + mo.type), mo));
                 }
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2fa82ea2fc86dd0128829cfefa5c8af7e28e6f96
             foreach (EnemyGadget eg in maplistenemies)
             {
                 eg.LoadContent();
@@ -90,10 +86,6 @@ namespace fourcolors
 
             foreach (EnemyGadget eg in maplistenemies)
             {
-<<<<<<< HEAD
-                CollisionManager.Instance.checkenemyplayerbulletcollision(eg);
-=======
->>>>>>> 2fa82ea2fc86dd0128829cfefa5c8af7e28e6f96
                 eg.Update(gameTime);
             }
         }
