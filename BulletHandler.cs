@@ -9,21 +9,18 @@ using Microsoft.Xna.Framework.Content;
 
 namespace fourcolors
 {
+    /// <summary>
+    /// The bullet handler handles bullets and explosions(animatedgraphics)
+    /// </summary>
     class BulletHandler
     {
+        Loader.parameter animatedgraphicsparam;
         Loader.parameter playerbulletparam;
         Loader.parameter enemybulletparam;
         static List<PlayerBullet> listplayerbullets;
         List<EnemyBullet> listenemybullets;
+        List<AnimatedGraphics> listanimatedgraphics;
         int i;
-
-        public Loader.parameter Playerbulletparam
-        {
-            set
-            {
-                playerbulletparam = value;
-            }
-        }
 
         private static BulletHandler instance;
 
@@ -41,6 +38,7 @@ namespace fourcolors
         {
             listplayerbullets = new List<PlayerBullet>();
             listenemybullets = new List<EnemyBullet>();
+            listanimatedgraphics = new List<AnimatedGraphics>();
         }
 
         public static List<PlayerBullet> Listplayerbullets
@@ -60,6 +58,11 @@ namespace fourcolors
             listplayerbullets.Add(new PlayerBullet(playerbulletparam, x, y));
         }
 
+        public void addAnimatedGraphics(int x, int y)
+        {
+            listanimatedgraphics.Add(new AnimatedGraphics(animatedgraphicsparam, x, y));
+        }
+
         public void addPlayerBullet(PlayerBullet pb)
         {
             listplayerbullets.Add(pb);
@@ -72,29 +75,41 @@ namespace fourcolors
 
         public void update(GameTime gametime)
         {
-            listplayerbullets.RemoveAll(PlayerBullet => PlayerBullet.Dead == true);
-            listenemybullets.RemoveAll(EnemyBullet => EnemyBullet.Dead == true);
+            //remove all the dead bullets
+            listplayerbullets.RemoveAll(PlayerBullet => PlayerBullet.IsDead == true);
+            listenemybullets.RemoveAll(EnemyBullet => EnemyBullet.IsDead == true);
+            listanimatedgraphics.RemoveAll(AnimatedGraphics => AnimatedGraphics.IsDead == true);
 
             foreach (PlayerBullet pb in listplayerbullets)
                 pb.Update(gametime);
 
             foreach (EnemyBullet eb in listenemybullets)
                 eb.Update(gametime);
+
+            foreach (AnimatedGraphics ag in listanimatedgraphics)
+                ag.Update(gametime);
         }
 
         public void draw(SpriteBatch spriteBatch)
         {
             foreach(PlayerBullet pb in listplayerbullets)
-            {
                 pb.Draw(spriteBatch);
-            }
 
             foreach(EnemyBullet eb in listenemybullets)
-            {
                 eb.Draw(spriteBatch);
-            }
+
+            foreach (AnimatedGraphics ag in listanimatedgraphics)
+                ag.Draw(spriteBatch);
         }
 
+        public Loader.parameter Playerbulletparam
+        {
+            set{ playerbulletparam = value; }
+        }
 
+        public Loader.parameter Animatedgraphicsparam
+        {
+            set{ animatedgraphicsparam = value; }
+        }
     }
 }

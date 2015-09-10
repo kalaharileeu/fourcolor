@@ -17,7 +17,7 @@ namespace fourcolors
 
         public EnemyBullet(Loader.parameter loaderparameters, int x, int y)
         {
-            image = loaderparameters.image;
+            //image = loaderparameters.image;
             movespeed = loaderparameters.movespeed;
             animatedtype = loaderparameters.animatedtype;
             numframesX = loaderparameters.numframesX;
@@ -29,11 +29,6 @@ namespace fourcolors
             //image = new Image();
             LoadContent();
             //numFrames = 1;
-        }
-
-        public bool Dead
-        {
-            get { return dead; }
         }
 
         public override void LoadContent()
@@ -57,6 +52,13 @@ namespace fourcolors
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+        }
+
+
+
+        public bool IsDead
+        {
+            get { return dead; }
         }
     }
 }

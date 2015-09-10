@@ -9,9 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    abstract class GameObject
+    /// <summary>
+    /// Base to EnemyGadget && PlayerGadget
+    /// </summary>
+    abstract public class GameObject
     {
-        //protected string imagesource;
         protected float movespeed;
         protected string animatedtype;
         protected int numframesX;
@@ -20,11 +22,15 @@ namespace fourcolors
         protected bool dying;
         protected int hits;
         protected int strength;
+        protected Vector2 deathvector;
         protected Image image;
+        protected string Effect;//this is a image effect
 
         abstract public void LoadContent();
         abstract public void UnloadContent();
         abstract public void Update(GameTime gameTime);
         abstract public void Draw(SpriteBatch spriteBatch);
+        abstract public Rectangle GetCurrentRect();
+
     }
 }

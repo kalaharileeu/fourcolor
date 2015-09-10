@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Loader>
+  <parameter>
+    <type>smallexplosion</type>
+    <imagesource>Gameplay/Explosion/smallexplosion</imagesource>
+    <effects>SpriteSheetEffect</effects>
+    <life>120</life>
+    <numframesX>2</numframesX>
+    <numframesY>1</numframesY>
+    <moveSpeed>0</moveSpeed>
+  </parameter>
+  <parameter>
+    <type>largeexplosion</type>
+    <imagesource>Gameplay/Explosion/largeexplosion</imagesource>
+    <effects>SpriteSheetEffect</effects>
+    <life>100</life>
+    <numframesX>10</numframesX>
+    <numframesY>1</numframesY>
+    <moveSpeed>0</moveSpeed>
+  </parameter>
+</Loader>

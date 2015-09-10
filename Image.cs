@@ -114,7 +114,7 @@ namespace fourcolors
             amountofframes = new Vector2(5, 1);//This is the default value for player
         }
         /// <summary>
-        /// Use this constructor with out XML file serialization
+        /// Use this constructor with XML file serialization
         /// </summary>
         /// <param name="ImageSource"></param>
         public Image(string ImageSource)
@@ -186,7 +186,6 @@ namespace fourcolors
             content.Unload();
             foreach (var effect in effectList)
                 DeactivateEffect(effect.Key);
-
         }
 
         public void Update(GameTime gameTime)

@@ -101,7 +101,7 @@ namespace fourcolors
                 }
             }
 
-            if (Velocity.Y == 0)//If you do not want to do diagonal movement
+            if (Velocity.Y == 0)//No diagonal movement
             {
                 if (InputManager.Instance.KeyDown(Keys.Right))
                 {
@@ -132,7 +132,7 @@ namespace fourcolors
             //if (Velocity.X == 0 && Velocity.Y == 0)//if the player is not moving
             //    image.IsActive = false;
 
-            BulletHandler.Instance.update(gameTime);
+            //BulletHandler.Instance.update(gameTime);//Move to map
             image.Update(gameTime);
             image.Position += Velocity;
         }

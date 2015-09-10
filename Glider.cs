@@ -37,7 +37,7 @@ namespace fourcolors
             velocity.Y = -randnumber13;
             if (image.Position.X > 600 || image.Position.X < 10)
             {
-                dead = true;
+                Dead();
             }
             base.Update(gameTime);
         }
@@ -46,14 +46,8 @@ namespace fourcolors
         {
             base.Draw(spriteBatch);
         }
+
+
     }
-/*
-    class GliderCreator : BaseCreator
-    {
-        public override EnemyGadget createGameObject()
-        {
-            //return new Glider(ObjectGroup.MapObject enemyobject);
-        }
-    }
- */
+
 }

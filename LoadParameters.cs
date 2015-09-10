@@ -13,9 +13,10 @@ namespace fourcolors
         {
             public Image image;
             public string imagesource;
+            public string Effects;
             public float movespeed;
             public int life;//number of frames to animate till deat of animation
-            public string animatedtype;
+            public string animatedtype;//type of explosion
             public int numframesX;
             public int numframesY;
             public bool dead;
@@ -29,7 +30,7 @@ namespace fourcolors
 
         public List<parameter> Loadedparamaters
         {
-            get { return loadparameters; }  
+            get { return loadparameters; }
         }
 
         public Loader()

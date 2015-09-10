@@ -25,9 +25,10 @@ namespace fourcolors
         [XmlElement("tilelayer")]
         public List<tilelayer> Layer;
         [XmlElement("objectgroup")]
-        public List<ObjectGroup> objectgroups;//Mostly enemis and background
+        public List<ObjectGroup> objectgroups;//Mostly enemies and background
         Vector2 TileDimensions;
         List<EnemyGadget> maplistenemies;
+        CollisionManager collisionmanager;
 
         public map()
         {
@@ -35,9 +36,7 @@ namespace fourcolors
             TileDimensions = Vector2.Zero;
             objectgroups = new List<ObjectGroup>();
             maplistenemies = new List<EnemyGadget>();
-           // collisionmanager = new CollisionManager();
-           // graphicslist = new List<AnimatedGraphics>();
-           // parameterdictionary = new Dictionary<string, Loader.parameter>();//the data in Loader.parameter comes from xml
+            collisionmanager = new CollisionManager();
         }
 
         public void LoadContent()
@@ -59,7 +58,8 @@ namespace fourcolors
                 foreach (ObjectGroup.MapObject mo in o.Mapobjects)
                 {
                    //maplistenemies.Add((EnemyGadget)Activator.CreateInstance(typeof(Glider) , mo));
-                   maplistenemies.Add((EnemyGadget)Activator.CreateInstance(Type.GetType("fourcolors." + mo.type), mo));
+                   maplistenemies.Add((EnemyGadget)Activator.CreateInstance
+                       (Type.GetType("fourcolors." + mo.type), mo));
                 }
             }
             foreach (EnemyGadget eg in maplistenemies)
@@ -78,16 +78,35 @@ namespace fourcolors
                 eg.UnloadContent();
             }
         }
-
+        /// <summary>
+        /// Map updates the layershere and checks for collsions via collision manager
+        /// </summary>
+        /// <param name="gameTime"></param>
         public void Update(GameTime gameTime)
         {
+            collisionmanager.checkEnemyPlayerBulletCollision(maplistenemies);
+            bool cleanup = false;
             foreach (tilelayer l in Layer)
                 l.Update(gameTime);
 
             foreach (EnemyGadget eg in maplistenemies)
             {
-                eg.Update(gameTime);
+                if (!eg.Dying)
+                {
+                    eg.Update(gameTime);
+                }
+                else
+                {
+                    cleanup = true;
+                    BulletHandler.Instance.addAnimatedGraphics((int)eg.DeathVector.X,
+                        (int)eg.DeathVector.Y);
+                }
             }
+            //if the was somethign dying then remove it from the list
+            if (cleanup)
+                maplistenemies.RemoveAll(EnemyGadget => EnemyGadget.Dying);
+
+            BulletHandler.Instance.update(gameTime);//used to be in player
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -99,6 +118,8 @@ namespace fourcolors
 
             foreach (tilelayer l in Layer)
                 l.Draw(spriteBatch);
+
+
         }
     }
 }

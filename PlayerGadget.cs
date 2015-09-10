@@ -38,6 +38,12 @@ namespace fourcolors
             {
                 dead = true;
             }
+            image.Update(gameTime);
+        }
+
+        public override Rectangle GetCurrentRect()
+        {
+            return new Rectangle((int)image.Position.X, (int)image.Position.Y, image.width, image.height);
         }
     }
 }

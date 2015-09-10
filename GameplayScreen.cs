@@ -15,6 +15,7 @@ namespace fourcolors
         map tilesandenemies;
         Loader.parameter playerparameters;
         Loader.parameter playerbulletparameter;
+        Loader.parameter animatedparameter;
         //Loader loadedparams;
         public static int scrollspeed = 1;
 
@@ -31,11 +32,13 @@ namespace fourcolors
             //player loader is the xml manager instance
             playerparameters = playerloader.Load("Content/Gameplay/Player.xml");
             playerbulletparameter = playerloader.Load("Content/Gameplay/Playergadgets.xml");//bullet
+            animatedparameter = playerloader.Load("Content/Gameplay/Animatedgraphics.xml");
             tilesandenemies = mapLoader.Load("Content/Gameplay/Map/doodlescene.xml");
             //playerbulletparam has set shorthand
             BulletHandler.Instance.Playerbulletparam = playerbulletparameter;
+            BulletHandler.Instance.Animatedgraphicsparam = animatedparameter;
            // map1.LoadContent();
-            LoadTilesandEnemies();
+            LoadTilesandEnemies();//this is the map
 
             tilesandenemies.LoadContent();
             player.LoadContent();
@@ -68,10 +71,10 @@ namespace fourcolors
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-
-            player.Update(gameTime);//update player before map because to map update stuff dependent on player
-           // map1.Update(gameTime, player);
-            tilesandenemies.Update(gameTime);
+            //update player before map because to map update stuff dependent on player
+            player.Update(gameTime);
+            //map1.Update(gameTime, player);
+            tilesandenemies.Update(gameTime);//this is the map
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -9,33 +9,39 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    class PlayerBullet : PlayerGadget
+    //AnimatedGraphics is wher explosions and effects are created
+    class AnimatedGraphics : PlayerGadget
     {
-        int playerx;
-        int playery;
+        int animationx;
+        int animationy;
         Vector2 velocity;
+        int animatedlife;
 
-        public PlayerBullet(Loader.parameter loaderparameters, int x, int y)
+        public AnimatedGraphics(Loader.parameter loaderparameters, int x, int y )
         {
-            //imagesource = loaderparameters.imagesource;
             movespeed = loaderparameters.movespeed;
             animatedtype = loaderparameters.animatedtype;
             numframesX = loaderparameters.numframesX;
             numframesY = loaderparameters.numframesY;
-            dead = loaderparameters.dead;
-            dying = loaderparameters.dying;
-            playerx = x;
-            playery = y;
+            animationx = x;
+            animationy = y;
+            Effect = loaderparameters.Effects;
+            animatedlife = loaderparameters.life;
             //get the image source directly from loaderparameters
             image = new Image(loaderparameters.imagesource);
+            //image.Set(loaderparameters.Effects);
+            image.Effects = Effect;
+            image.Position.X = animationx;
+            image.Position.Y = animationy;
+            image.amountofframes.X = numframesX;
+            image.amountofframes.Y = numframesY;
+            //image.width = 
             LoadContent();
         }
 
         public override void LoadContent()
         {
             base.LoadContent();
-            image.Position.X = playerx;
-            image.Position.Y = playery;
         }
 
         public override void UnloadContent()
@@ -45,7 +51,11 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            image.Position.X += movespeed;
+            //image.Update(gameTime);
+            animatedlife -= 1;
+            image.IsActive = true;
+            if (animatedlife == 0)
+                dead = true;
             base.Update(gameTime);
         }
 
@@ -54,22 +64,9 @@ namespace fourcolors
             base.Draw(spriteBatch);
         }
 
-        public void Dead()
-        {
-            dying = true;
-            deathvector.X = (int)image.Position.X;
-            deathvector.Y = (int)image.Position.Y;
-            dead = true;
-        }
-
         public bool IsDead
         {
-            get {return dead;}
-        }
-
-        public string AnimatedType
-        {
-            get { return animatedtype; }
+            get { return dead; }
         }
     }
 }

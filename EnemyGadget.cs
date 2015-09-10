@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    class EnemyGadget : GameObject
+    public class EnemyGadget : GameObject
     {
         int positionx;
         int positiony;
@@ -21,6 +21,8 @@ namespace fourcolors
             dying = false;
             positionx = enemyobject.x;
             positiony = enemyobject.y;
+            deathvector = Vector2.Zero;
+            velocity = Vector2.Zero;
 
             foreach (ObjectGroup.MapObject.Properties.Property p in enemyobject.GetProperties.ListOfProperties)
             {
@@ -29,8 +31,6 @@ namespace fourcolors
                 else if(p.name == "source")
                     image = new Image(p.value);
             }
-
-            velocity = Vector2.Zero;
             LoadContent();
         }
 
@@ -58,6 +58,30 @@ namespace fourcolors
                 image.Position.X += velocity.X;
                 image.Position.Y += velocity.Y;
             }
+        }
+
+        public override Rectangle GetCurrentRect()
+        {
+            return new Rectangle((int)image.Position.X, (int)image.Position.Y, image.width, image.height);
+        }
+
+        public void Dead()
+        {
+            dying = true;
+            deathvector.X = (int)image.Position.X;
+            deathvector.Y = (int)image.Position.Y;
+            dead = true;
+        }
+
+        public Vector2 DeathVector
+        {
+            //Return the place of dying
+            get { return deathvector; }
+        }
+
+        public bool Dying
+        { 
+            get { return dying; } 
         }
     }
 }

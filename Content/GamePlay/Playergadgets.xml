@@ -2,7 +2,7 @@
 <parameter>
   <imagesource>Gameplay/Bullet/bullet1</imagesource>
   <Effects></Effects>
-  <movespeed>200</movespeed>
+  <movespeed>3</movespeed>
   <life>1</life>
   <animatedtype>smallexplosion</animatedtype>
   <numframesX>1</numframesX>
