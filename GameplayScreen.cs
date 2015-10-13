@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -47,7 +42,6 @@ namespace fourcolors
         void LoadTilesandEnemies()
         {
             player = new Player(playerparameters);
-
            /* foreach (Loader.parameter v in loadedparams.Loadedparamaters)
             {
                 try
@@ -74,7 +68,7 @@ namespace fourcolors
             //update player before map because to map update stuff dependent on player
             player.Update(gameTime);
             //map1.Update(gameTime, player);
-            tilesandenemies.Update(gameTime);//this is the map
+            tilesandenemies.Update(gameTime, player.GetCurrentRect(), player.Deathvector);//this is the map
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -13,8 +13,18 @@ using System.Diagnostics;
 
 namespace fourcolors
 {
-    public class tilelayer
+    public class layer
     {
+        public class property
+        {
+            [XmlAttribute]
+            public string name;
+            [XmlAttribute]
+            public string state;
+        }
+
+        [XmlElement("properties")]
+        List<property> properties;
         [XmlAttribute]
         public string name;
         [XmlAttribute]
@@ -31,7 +41,7 @@ namespace fourcolors
             get { return data; }
         }
 
-        public tilelayer()
+        public layer()
         {
             Image = new Image();
             underlayTiles = new List<Tile>();
@@ -101,11 +111,11 @@ namespace fourcolors
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime)//ptimise
+        public void Update(GameTime gameTime, Rectangle playerrect, Rectangle deathvector)//ptimise
         {
             foreach (Tile tile in underlayTiles)
             {
-                tile.Update(gameTime);
+                tile.Update(gameTime, playerrect, deathvector);
                 tile.scroll(1);
             }
         }

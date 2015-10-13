@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
@@ -22,8 +20,8 @@ namespace fourcolors
         public int tileheight;//pixel width
         [XmlElement("tileset")]
         public tileset tilesetinfo;
-        [XmlElement("tilelayer")]
-        public List<tilelayer> Layer;
+        [XmlElement("layer")]
+        public List<layer> Layer;
         [XmlElement("objectgroup")]
         public List<ObjectGroup> objectgroups;//Mostly enemies and background
         Vector2 TileDimensions;
@@ -32,7 +30,7 @@ namespace fourcolors
 
         public map()
         {
-            Layer = new List<tilelayer>();
+            Layer = new List<layer>();
             TileDimensions = Vector2.Zero;
             objectgroups = new List<ObjectGroup>();
             maplistenemies = new List<EnemyGadget>();
@@ -45,7 +43,7 @@ namespace fourcolors
 
             TileDimensions.X = tilewidth;
             TileDimensions.Y = tileheight;
-            foreach (tilelayer l in Layer)
+            foreach (layer l in Layer)
             {
                 l.Image = tilesetinfo.getimage;
                 int spacing = tilesetinfo.spacing;
@@ -70,7 +68,7 @@ namespace fourcolors
 
         public void UnloadContent()
         {
-            foreach (tilelayer l in Layer)
+            foreach (layer l in Layer)
                 l.UnloadContent();
 
             foreach (EnemyGadget eg in maplistenemies)
@@ -82,12 +80,14 @@ namespace fourcolors
         /// Map updates the layershere and checks for collsions via collision manager
         /// </summary>
         /// <param name="gameTime"></param>
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Rectangle playerrect, Rectangle deathvector)
         {
-            collisionmanager.checkEnemyPlayerBulletCollision(maplistenemies);
+            //if there is no bullets do not check
+            if(BulletHandler.Listplayerbullets.Count != 0)
+                collisionmanager.checkEnemyPlayerBulletCollision(maplistenemies);
             bool cleanup = false;
-            foreach (tilelayer l in Layer)
-                l.Update(gameTime);
+            foreach (layer l in Layer)
+                l.Update(gameTime, playerrect, deathvector);
 
             foreach (EnemyGadget eg in maplistenemies)
             {
@@ -116,7 +116,7 @@ namespace fourcolors
                 eg.Draw(spriteBatch);
             }
 
-            foreach (tilelayer l in Layer)
+            foreach (layer l in Layer)
                 l.Draw(spriteBatch);
 
 

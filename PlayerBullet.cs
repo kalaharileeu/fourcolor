@@ -28,6 +28,7 @@ namespace fourcolors
             playery = y;
             //get the image source directly from loaderparameters
             image = new Image(loaderparameters.imagesource);
+            
             LoadContent();
         }
 
@@ -36,6 +37,8 @@ namespace fourcolors
             base.LoadContent();
             image.Position.X = playerx;
             image.Position.Y = playery;
+            image.height = 11;
+            image.width = 11;
         }
 
         public override void UnloadContent()

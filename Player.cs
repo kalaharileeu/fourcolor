@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-/**
+﻿/**
  <comment>values from player xml file
  <image source="Gameplay/heli" width = "96" height = "41">
     <Effects>SpriteSheetEffect</Effects>
@@ -9,14 +6,10 @@ using System.Linq;
   <MoveSpeed>100</MoveSpeed>
   </comment>
  */
-using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
-using System.Diagnostics;
 
 namespace fourcolors
 {
@@ -37,6 +30,7 @@ namespace fourcolors
             image = loaderparameters.image;
             movespeed = loaderparameters.movespeed;
             animatedtype = loaderparameters.animatedtype;
+            deathvector = new Rectangle(0,0,0,0);
         }
 
         public void SetDying(Rectangle dv)
@@ -68,6 +62,11 @@ namespace fourcolors
             return collisionRect;
         }
 
+        public Rectangle Deathvector
+        {
+            get { return deathvector; }
+        }
+
         public void LoadContent()
         {
             image.LoadContent();
@@ -81,6 +80,10 @@ namespace fourcolors
 
         public void Update(GameTime gameTime)
         {
+            if((deathvector.X > 0) || (deathvector.Y > 0))
+            {
+                Dead(true);
+            }
             image.IsActive = true;
             if (Velocity.X == 0)//If you do not want to do diagonal movement
             {

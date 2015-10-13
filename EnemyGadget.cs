@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -24,13 +21,19 @@ namespace fourcolors
             deathvector = Vector2.Zero;
             velocity = Vector2.Zero;
 
-            foreach (ObjectGroup.MapObject.Properties.Property p in enemyobject.GetProperties.ListOfProperties)
-            {
-                if (p.name == "numframes")
-                    numframesX = Convert.ToInt32(p.value);
-                else if(p.name == "source")
-                    image = new Image(p.value);
-            }
+            var match = enemyobject.GetProperties.ListOfProperties.Find(x => x.name == "numFrames");
+            if (match != null)
+                numframesX = Convert.ToInt32(match.value);
+            match = enemyobject.GetProperties.ListOfProperties.Find(x => x.name == "source");
+            if (match != null)
+                image = new Image(match.value);
+            match = enemyobject.GetProperties.ListOfProperties.Find(x => x.name == "Height");
+            if ((match != null) && (image != null))
+                image.height = Convert.ToInt32(match.value);
+            match = enemyobject.GetProperties.ListOfProperties.Find(x => x.name == "Width");
+            if ((match != null) && (image != null))
+                image.width = Convert.ToInt32(match.value);
+
             LoadContent();
         }
 

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+
 
 using Microsoft.Xna.Framework;
 
@@ -17,11 +15,12 @@ namespace fourcolors
                 {
                     foreach (PlayerBullet pb in BulletHandler.Listplayerbullets)
                     {
-                        if (Collision.RectRect(eg.GetCurrentRect(), pb.GetCurrentRect()))
+                        if(Collision.RectRect(pb.GetCurrentRect(), eg.GetCurrentRect()))
                         {
                             eg.Dead();
                             pb.Dead();
                         }
+                        //Rectangle.Intersect(recct, rect)
                     }
                 }
             }

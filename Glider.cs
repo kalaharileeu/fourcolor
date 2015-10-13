@@ -30,14 +30,16 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-
-            //randnumber13 = rnd.Next(-2, 2);
-            //velocity.X = -randnumber13;
-            randnumber13 = rnd.Next(-2, 2);
-            velocity.Y = -randnumber13;
-            if (image.Position.X > 600 || image.Position.X < 10)
+            if(image.Position.X < 530)
             {
-                Dead();
+                //randnumber13 = rnd.Next(-2, 2);
+                //velocity.X = -randnumber13;
+                randnumber13 = rnd.Next(-4, 4);
+                velocity.Y = -randnumber13;
+                if (image.Position.X < 10)
+                {
+                    Dead();
+                }
             }
             base.Update(gameTime);
         }

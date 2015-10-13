@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 
 namespace fourcolors
 {
@@ -20,7 +15,7 @@ namespace fourcolors
             int bWBuf = B.Width / s_buffer;
 
             // if the bottom of A is less than the top of B - no collision
-            if ((A.Y + A.Height) - aHBuf <= B.Y + bHBuf) { return false; }
+              if ((A.Y + A.Height) - aHBuf <= B.Y + bHBuf) { return false; }
 
             // if the top of A is more than the bottom of B = no collision
             if (A.Y + aHBuf >= (B.Y + B.Height) - bHBuf) { return false; }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
@@ -40,32 +35,22 @@ namespace fourcolors
         { 
         }
         
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Rectangle playerrect, Rectangle playerdv)
         {
-            /*
+
             if(state == "Solid")//Below is the collision handling
             {
                 Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y,
                     sourceRect.Width, sourceRect.Height);
-                Rectangle playerRect = new Rectangle((int)player.image.Position.X,
-                    (int)player.image.Position.Y, player.image.SourceRect.Width, player.image.SourceRect.Height);
 
-                if (playerRect.Intersects(tileRect))
+                if(Collision.RectRect(tileRect, playerrect))
                 {
-                    
-                    if (player.Velocity.X < 0)
-                        player.image.Position.X = tileRect.Right;
-                    else if (player.Velocity.X > 0)
-                        player.image.Position.X = tileRect.Left - player.image.SourceRect.Width;
-                    else if (player.Velocity.Y < 0)
-                        player.image.Position.Y = tileRect.Bottom;
-                    else
-                        player.image.Position.Y = tileRect.Top - player.image.SourceRect.Height;
-                    player.SetDying(player.GetCurrentRect());//The player is dead get its position
-                    player.Velocity = Vector2.Zero;//This does not matter that much.
-                    //player.image.IsActive = false;
+                    playerdv.X = playerrect.X;
+                    playerdv.Y = playerrect.Y;
                 }
-            }*/
+
+
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
