@@ -11,6 +11,7 @@ namespace fourcolors
         Loader.parameter playerparameters;
         Loader.parameter playerbulletparameter;
         Loader.parameter animatedparameter;
+
         //Loader loadedparams;
         public static int scrollspeed = 1;
 
@@ -68,7 +69,7 @@ namespace fourcolors
             //update player before map because to map update stuff dependent on player
             player.Update(gameTime);
             //map1.Update(gameTime, player);
-            tilesandenemies.Update(gameTime, player.GetCurrentRect(), player.Deathvector);//this is the map
+            tilesandenemies.Update(gameTime, player.GetCurrentRect());//this is the map
         }
 
         public override void Draw(SpriteBatch spriteBatch)

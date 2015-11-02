@@ -8,6 +8,7 @@ namespace fourcolors
         Vector2 position;
         Rectangle sourceRect;
         string state;
+        Vector2 deathtile2d;
 
         public Rectangle SourceRect
         {
@@ -26,6 +27,8 @@ namespace fourcolors
 
         public void LoadContent(Vector2 position, Rectangle sourceRect, string state)
         {
+            deathtile2d = new Vector2(0, 0);
+            
             this.position = position;
             this.sourceRect = sourceRect;
             this.state = state;
@@ -35,9 +38,10 @@ namespace fourcolors
         { 
         }
         
-        public void Update(GameTime gameTime, Rectangle playerrect, Rectangle playerdv)
+        public void Update(GameTime gameTime, Rectangle playerrect)
         {
-
+            deathtile2d.X = 0;
+            deathtile2d.Y = 0;
             if(state == "Solid")//Below is the collision handling
             {
                 Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y,
@@ -45,12 +49,11 @@ namespace fourcolors
 
                 if(Collision.RectRect(tileRect, playerrect))
                 {
-                    playerdv.X = playerrect.X;
-                    playerdv.Y = playerrect.Y;
+                    deathtile2d.X = playerrect.X;
+                    deathtile2d.Y = playerrect.Y;
                 }
-
-
             }
+            //return the point of collisionplayer vs tile
         }
 
         public void Draw(SpriteBatch spriteBatch)

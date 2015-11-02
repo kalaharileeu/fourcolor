@@ -80,14 +80,14 @@ namespace fourcolors
         /// Map updates the layershere and checks for collsions via collision manager
         /// </summary>
         /// <param name="gameTime"></param>
-        public void Update(GameTime gameTime, Rectangle playerrect, Rectangle deathvector)
+        public void Update(GameTime gameTime, Rectangle playerrect)
         {
             //if there is no bullets do not check
             if(BulletHandler.Listplayerbullets.Count != 0)
                 collisionmanager.checkEnemyPlayerBulletCollision(maplistenemies);
             bool cleanup = false;
             foreach (layer l in Layer)
-                l.Update(gameTime, playerrect, deathvector);
+                l.Update(gameTime, playerrect);
 
             foreach (EnemyGadget eg in maplistenemies)
             {

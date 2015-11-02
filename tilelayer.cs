@@ -15,20 +15,38 @@ namespace fourcolors
 {
     public class layer
     {
-        public class property
+        //***********************class Propeties********************//
+        public class properties
         {
-            [XmlAttribute]
-            public string name;
-            [XmlAttribute]
-            public string state;
+            //**********************inner class Property********************//
+            public class property
+            {
+                [XmlAttribute]
+                public string name;
+                [XmlAttribute]
+                public string value;//Solid or passive
+            }
+            //Properties countains a list of Property
+            [XmlElement("property")]
+            public List<property> listOfProperties;
+
+            public properties()
+            {
+                listOfProperties = new List<property>();
+            }
+
+            public List<property> ListOfProperties
+            {
+                get { return listOfProperties; }
+            }
         }
 
+      //  [XmlAttribute]
+        string name;//TODO: Can possibly remove these
+       // [XmlAttribute]
+        string state;//TODO: Can possibly remove these Solid or passive
         [XmlElement("properties")]
-        List<property> properties;
-        [XmlAttribute]
-        public string name;
-        [XmlAttribute]
-        public string state;
+        public properties propertie;
         [XmlElement("data")]
         public string data;
         [XmlIgnore]
@@ -45,12 +63,16 @@ namespace fourcolors
         {
             Image = new Image();
             underlayTiles = new List<Tile>();
+            propertie = new properties(); 
         }
 
         public void LoadContent(Vector2 tileDimensions, int tileheight, int tilewidth, int height, int width, int spacing, int margin)
         {
+            var prpty = propertie.ListOfProperties.Find(x => x.name == "state");
+            if (prpty != null)
+                state = prpty.value;//prpty is the instance of aproperty class
             Image.LoadContent();
-
+            
             byte[] encodeddata = Convert.FromBase64String(data);
             //string decodedString = Encoding.UTF8.GetString(encodeddata);//not needed
 
@@ -111,11 +133,11 @@ namespace fourcolors
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, Rectangle playerrect, Rectangle deathvector)//ptimise
+        public void Update(GameTime gameTime, Rectangle playerrect)//optimise
         {
             foreach (Tile tile in underlayTiles)
             {
-                tile.Update(gameTime, playerrect, deathvector);
+                tile.Update(gameTime, playerrect);
                 tile.scroll(1);
             }
         }

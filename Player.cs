@@ -65,6 +65,7 @@ namespace fourcolors
         public Rectangle Deathvector
         {
             get { return deathvector; }
+            set { deathvector = value;  }
         }
 
         public void LoadContent()
