@@ -81,7 +81,7 @@ namespace fourcolors
 
         public void Update(GameTime gameTime)
         {
-            if (!Dead)
+            if (!isDead)
             {
                 //if((deathvector.X > 0) || (deathvector.Y > 0))
                 //{
