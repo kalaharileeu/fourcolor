@@ -69,7 +69,8 @@ namespace fourcolors
             //update player before map because to map update stuff dependent on player
             player.Update(gameTime);
             //map1.Update(gameTime, player);
-            tilesandenemies.Update(gameTime, player.GetCurrentRect());//this is the map
+            //this is the map
+            tilesandenemies.Update(gameTime, player.GetCurrentRect());
         }
 
         public override void Draw(SpriteBatch spriteBatch)

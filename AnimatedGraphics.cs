@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    //AnimatedGraphics is wher explosions and effects are created
+    //AnimatedGraphics is where explosions and effects are created
     class AnimatedGraphics : PlayerGadget
     {
         int animationx;

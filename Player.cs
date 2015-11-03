@@ -67,7 +67,7 @@ namespace fourcolors
             get { return deathvector; }
             set { deathvector = value;  }
         }
-
+        //Load the start position of the player and content
         public void LoadContent()
         {
             image.LoadContent();
@@ -81,64 +81,68 @@ namespace fourcolors
 
         public void Update(GameTime gameTime)
         {
-            if((deathvector.X > 0) || (deathvector.Y > 0))
+            if (!Dead)
             {
-                Dead(true);
-            }
-            image.IsActive = true;
-            if (Velocity.X == 0)//If you do not want to do diagonal movement
-            {
-                if (InputManager.Instance.KeyDown(Keys.Down))
+                //if((deathvector.X > 0) || (deathvector.Y > 0))
+                //{
+                //    Dead(true);
+                //}
+                image.IsActive = true;
+                if (Velocity.X == 0)//If you do not want to do diagonal movement
                 {
-                    Velocity.Y = movespeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    image.SpriteSheetEffect.CurrentFrame.Y = 0;//Y coordinate for down is 0, left Y = 1, right Y= 2, up y = 3
+                    if (InputManager.Instance.KeyDown(Keys.Down))
+                    {
+                        Velocity.Y = movespeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        image.SpriteSheetEffect.CurrentFrame.Y = 0;//Y coordinate for down is 0, left Y = 1, right Y= 2, up y = 3
+                    }
+                    else if (InputManager.Instance.KeyDown(Keys.Up))
+                    {
+                        Velocity.Y = -movespeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        image.SpriteSheetEffect.CurrentFrame.Y = 0;//Y coordinate for down is 0, left Y = 1, right Y= 2, up y = 3
+                    }
+                    else
+                    {
+                        Velocity.Y = 0;
+                        image.SpriteSheetEffect.CurrentFrame.Y = 0;
+                    }
                 }
-                else if (InputManager.Instance.KeyDown(Keys.Up))
-                {
-                    Velocity.Y = -movespeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    image.SpriteSheetEffect.CurrentFrame.Y = 0;//Y coordinate for down is 0, left Y = 1, right Y= 2, up y = 3
-                }
-                else
-                {
-                    Velocity.Y = 0;
-                    image.SpriteSheetEffect.CurrentFrame.Y = 0;
-                }
-            }
 
-            if (Velocity.Y == 0)//No diagonal movement
-            {
-                if (InputManager.Instance.KeyDown(Keys.Right))
+                if (Velocity.Y == 0)//No diagonal movement
                 {
-                    Velocity.X = movespeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    image.SpriteSheetEffect.CurrentFrame.Y = 0;//Y coordinate for down is 0, left Y = 1, right Y= 2, up y = 3
+                    if (InputManager.Instance.KeyDown(Keys.Right))
+                    {
+                        Velocity.X = movespeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        image.SpriteSheetEffect.CurrentFrame.Y = 0;//Y coordinate for down is 0, left Y = 1, right Y= 2, up y = 3
+                    }
+                    else if (InputManager.Instance.KeyDown(Keys.Left))
+                    {
+                        Velocity.X = -movespeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                        image.SpriteSheetEffect.CurrentFrame.Y = 0;//Y coordinate for down is 0, left Y = 1, right Y= 2, up y = 3
+                    }
+                    else
+                    {
+                        Velocity.X = 0;
+                        image.SpriteSheetEffect.CurrentFrame.Y = 0;
+                    }
                 }
-                else if (InputManager.Instance.KeyDown(Keys.Left))
+
+                if (InputManager.Instance.KeyPressed(Keys.Space))
                 {
-                    Velocity.X = -movespeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    image.SpriteSheetEffect.CurrentFrame.Y = 0;//Y coordinate for down is 0, left Y = 1, right Y= 2, up y = 3
+                    //image height and width is given by texture.heigt and texture.width
+                    BulletHandler.Instance.addPlayerBullet((int)(image.Position.X + image.width),
+                        (int)(image.Position.Y + (image.height / 2)));
+                    SoundManager.Instance.PlayPhaser();
                 }
-                else
-                {
-                    Velocity.X = 0;
-                    image.SpriteSheetEffect.CurrentFrame.Y = 0;
-                }
+
+                ///<remark>if player not moving this stop animation</remark>
+                //if (Velocity.X == 0 && Velocity.Y == 0)//if the player is not moving
+                //    image.IsActive = false;
+
+                //BulletHandler.Instance.update(gameTime);//Move to map
+                image.Update(gameTime);
+                image.Position += Velocity;
+                CollisionManager.Instance.Playerposition = new Rectangle((int)image.Position.X, (int)image.Position.Y, image.width, image.height);
             }
-
-            if (InputManager.Instance.KeyPressed(Keys.Space))
-            {
-                //image height and width is given by texture.heigt and texture.width
-                BulletHandler.Instance.addPlayerBullet((int)(image.Position.X + image.width), 
-                    (int)(image.Position.Y + (image.height / 2)));
-                SoundManager.Instance.PlayPhaser();
-            }
-
-            ///<remark>if player not moving this stop animation</remark>
-            //if (Velocity.X == 0 && Velocity.Y == 0)//if the player is not moving
-            //    image.IsActive = false;
-
-            //BulletHandler.Instance.update(gameTime);//Move to map
-            image.Update(gameTime);
-            image.Position += Velocity;
         }
         
         public void Draw(SpriteBatch spriteBatch)

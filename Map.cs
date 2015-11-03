@@ -26,7 +26,7 @@ namespace fourcolors
         public List<ObjectGroup> objectgroups;//Mostly enemies and background
         Vector2 TileDimensions;
         List<EnemyGadget> maplistenemies;
-        CollisionManager collisionmanager;
+        //CollisionManager collisionmanager;
 
         public map()
         {
@@ -34,7 +34,7 @@ namespace fourcolors
             TileDimensions = Vector2.Zero;
             objectgroups = new List<ObjectGroup>();
             maplistenemies = new List<EnemyGadget>();
-            collisionmanager = new CollisionManager();
+            //collisionmanager = new CollisionManager();
         }
 
         public void LoadContent()
@@ -82,9 +82,8 @@ namespace fourcolors
         /// <param name="gameTime"></param>
         public void Update(GameTime gameTime, Rectangle playerrect)
         {
-            //if there is no bullets do not check
-            if(BulletHandler.Listplayerbullets.Count != 0)
-                collisionmanager.checkEnemyPlayerBulletCollision(maplistenemies);
+            //Check for collsiions between enemy and plyer and playerbullets
+            CollisionManager.Instance.checkEnemyPlayerBulletCollision(maplistenemies);
             bool cleanup = false;
             foreach (layer l in Layer)
                 l.Update(gameTime, playerrect);

@@ -48,8 +48,5 @@ namespace fourcolors
         {
             base.Draw(spriteBatch);
         }
-
-
     }
-
 }

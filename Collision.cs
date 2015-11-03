@@ -2,6 +2,9 @@
 
 namespace fourcolors
 {
+    /// <summary>
+    /// This is called from collsion manager to check if the rectangle collide
+    /// </summary>
     public class Collision
     {
         const int s_buffer = 4;

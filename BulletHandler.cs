@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
 
 namespace fourcolors
 {
     /// <summary>
     /// The bullet handler handles bullets and explosions(animatedgraphics)
+    /// The player updates its position in the bullet handler for collision
+    /// detection. The collsion manager get it here.
+    /// The list of animated graphics are explosions or other graphics.
     /// </summary>
     class BulletHandler
     {
         Loader.parameter animatedgraphicsparam;
         Loader.parameter playerbulletparam;
-        Loader.parameter enemybulletparam;
-        static List<PlayerBullet> listplayerbullets;
+        //Loader.parameter enemybulletparam;//TODO implemment
+        List<PlayerBullet> listplayerbullets;
         List<EnemyBullet> listenemybullets;
         List<AnimatedGraphics> listanimatedgraphics;
         int i;
@@ -41,15 +41,15 @@ namespace fourcolors
             listanimatedgraphics = new List<AnimatedGraphics>();
         }
 
-        public static List<PlayerBullet> Listplayerbullets
+        public List<PlayerBullet> Listplayerbullets
         {
             get { return listplayerbullets; }
         }
 
-        public void addEnemyBullet(int x, int y)
-        {
-            listenemybullets.Add(new EnemyBullet(enemybulletparam, x, y));
-        }
+        //public void addEnemyBullet(int x, int y)
+        //{
+        //    listenemybullets.Add(new EnemyBullet(enemybulletparam, x, y));
+        //}
 
         public void addPlayerBullet(int x, int y)
         {
@@ -57,7 +57,7 @@ namespace fourcolors
                     i++;
             listplayerbullets.Add(new PlayerBullet(playerbulletparam, x, y));
         }
-
+        //Adds a animated graphic to the list(a explosion or something)
         public void addAnimatedGraphics(int x, int y)
         {
             listanimatedgraphics.Add(new AnimatedGraphics(animatedgraphicsparam, x, y));
