@@ -19,6 +19,7 @@ namespace fourcolors
         ContentManager content;
         public SoundEffect phaser;
         public SoundEffect electro;
+        public SoundEffect explode;
         //public Song song1;
 
         private static SoundManager instance;
@@ -36,26 +37,15 @@ namespace fourcolors
         public void LoadContent()
         {
             content = new ContentManager(ScreenManager.Instance.Content.ServiceProvider, "Content");
- //           try
-//            {
-                phaser = content.Load<SoundEffect>("Sound/phaser");
-/*            }
-            catch(ContentLoadException e)
-            {
-                Debug.WriteLine("Sound file not loaded");
-            }
-                */
+            phaser = content.Load<SoundEffect>("Sound/phaser");
             electro = content.Load<SoundEffect>("Sound/DST_ElectroRock");
+            explode = content.Load<SoundEffect>("Sound/missileexplode");
         }
 
-        public void PlayPhaser()
-        {
-            phaser.Play();
-        }
+        public void PlayPhaser(){ phaser.Play(); }
 
-        public void PlayMusic()
-        {
-           electro.Play();
-        }
+        public void PlayMusic(){ electro.Play(); }
+
+        public void Playexplode() { explode.Play(); }
     }
 }

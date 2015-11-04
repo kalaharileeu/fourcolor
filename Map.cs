@@ -97,8 +97,10 @@ namespace fourcolors
                 else
                 {
                     cleanup = true;
+                    //Collided load animated graphics
                     BulletHandler.Instance.addAnimatedGraphics((int)eg.DeathVector.X,
                         (int)eg.DeathVector.Y);
+                    SoundManager.Instance.Playexplode();
                 }
             }
             //if the was somethign dying then remove it from the list

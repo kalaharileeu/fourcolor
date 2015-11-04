@@ -4,6 +4,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
+    /// <summary>
+    /// The Gameplay screen loads all the Xml files and parameters. Getting it ready for use in the game,
+   ///  Bullets, explosions etc.
+   /// map tiles and enimies comes from Tiled.exe.
+    /// </summary>
     public class GameplayScreen : GameScreen
     {
         Player player;
@@ -11,6 +16,7 @@ namespace fourcolors
         Loader.parameter playerparameters;
         Loader.parameter playerbulletparameter;
         Loader.parameter animatedparameter;
+        Loader.parameter smallexplosion;
 
         //Loader loadedparams;
         public static int scrollspeed = 1;

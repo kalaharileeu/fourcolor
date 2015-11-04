@@ -41,6 +41,8 @@ namespace fourcolors
 
         public void checkEnemyPlayerBulletCollision(List<EnemyGadget> elist)
         {
+            //set the collision to false here
+            playercollision = false;
             foreach (EnemyGadget eg in elist)
             {
                 if (!(eg is ScrollingBackground))
@@ -54,15 +56,11 @@ namespace fourcolors
                         }
                         //Rectangle.Intersect(recct, rect)
                     }
-
+                    //check for player enemy collision
                     if (Collision.RectRect(playerposition, eg.GetCurrentRect()))
                     {
                         eg.Dead();
                         playercollision = true;
-                    }
-                    else
-                    {
-                        playercollision = false;
                     }
                 }
             }

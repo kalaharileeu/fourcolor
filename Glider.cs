@@ -36,7 +36,7 @@ namespace fourcolors
                 //velocity.X = -randnumber13;
                 randnumber13 = rnd.Next(-4, 4);
                 velocity.Y = -randnumber13;
-                if (image.Position.X < 10)
+                if (image.Position.X < 0)
                 {
                     Dead();
                 }
