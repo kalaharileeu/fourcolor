@@ -4,7 +4,7 @@
   <Effects>SpriteSheetEffect</Effects>
   <movespeed>0</movespeed>
   <life>150</life>
-  <animatedtype></animatedtype>
+  <animatedtype>largeexplosion</animatedtype>
   <numframesX>10</numframesX>
   <numframesY>1</numframesY>
   <dead>false</dead>

@@ -4,7 +4,7 @@
   <Effects></Effects>
   <movespeed>3</movespeed>
   <life>1</life>
-  <animatedtype>smallexplosion</animatedtype>
+  <animatedtype>bullet1</animatedtype>
   <numframesX>1</numframesX>
   <numframesY>1</numframesY>
   <dead>false</dead>

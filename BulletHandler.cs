@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -14,8 +12,11 @@ namespace fourcolors
     /// </summary>
     class BulletHandler
     {
-        Loader.parameter animatedgraphicsparam;
+        Loader.parameter animatedgraphicsparam;//large explotion
         Loader.parameter playerbulletparam;
+        Loader.parameter smallexplotion;
+        //From xml serialization ready for animated bullets and explosions
+        List<Loader.parameter> listofparameters; //From xml serialization ready for 
         //Loader.parameter enemybulletparam;//TODO implemment
         List<PlayerBullet> listplayerbullets;
         List<EnemyBullet> listenemybullets;
@@ -39,6 +40,7 @@ namespace fourcolors
             listplayerbullets = new List<PlayerBullet>();
             listenemybullets = new List<EnemyBullet>();
             listanimatedgraphics = new List<AnimatedGraphics>();
+            listofparameters = new List<Loader.parameter>();
         }
 
         public List<PlayerBullet> Listplayerbullets
@@ -51,13 +53,19 @@ namespace fourcolors
         //    listenemybullets.Add(new EnemyBullet(enemybulletparam, x, y));
         //}
 
+        public void addloaderparameter(Loader.parameter v)
+        {
+            listofparameters.Add(v);
+        }
+
         public void addPlayerBullet(int x, int y)
         {
             if (listplayerbullets.Count > 4)
                     i++;
             listplayerbullets.Add(new PlayerBullet(playerbulletparam, x, y));
         }
-        //Adds a animated graphic to the list(a explosion or something)
+        //Add in real time a animated graphic to the list(a explosion or something)
+        //it will be animated and showed 
         public void addAnimatedGraphics(int x, int y)
         {
             listanimatedgraphics.Add(new AnimatedGraphics(animatedgraphicsparam, x, y));

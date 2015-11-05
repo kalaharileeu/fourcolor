@@ -1,23 +1,25 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
     /// <summary>
     /// The Gameplay screen loads all the Xml files and parameters. Getting it ready for use in the game,
-   ///  Bullets, explosions etc.
-   /// map tiles and enimies comes from Tiled.exe.
+    ///  Bullets, explosions etc.
+    /// map tiles and enimies comes from Tiled.exe.
     /// </summary>
+    /// <remarks>
+    /// TODO:
+    /// Add loader parameters in one xml file. Bullets and explotions
+    /// </remarks>
     public class GameplayScreen : GameScreen
     {
         Player player;
         map tilesandenemies;
         Loader.parameter playerparameters;
         Loader.parameter playerbulletparameter;
-        Loader.parameter animatedparameter;
+        Loader.parameter animatedparameter;//this is large explotion
         Loader.parameter smallexplosion;
-
         //Loader loadedparams;
         public static int scrollspeed = 1;
 
@@ -31,17 +33,18 @@ namespace fourcolors
             //XmlManager<Loader.parameter> playerbulletloader = new XmlManager<Loader.parameter>();
             XmlManager<map> mapLoader = new XmlManager<map>();
             //loadedparams = paramloader.Load("Content/Gameplay/Explosion/parameters.xml");
-            //player loader is the xml manager instance
+            //player loader is the xml manager instance for manual created xml
             playerparameters = playerloader.Load("Content/Gameplay/Player.xml");
             playerbulletparameter = playerloader.Load("Content/Gameplay/Playergadgets.xml");//bullet
             animatedparameter = playerloader.Load("Content/Gameplay/Animatedgraphics.xml");
+            smallexplosion = playerloader.Load("Content/Gameplay/Animatedgraphics.xml");
+            //use map loader for xml created in Tiled.exe
             tilesandenemies = mapLoader.Load("Content/Gameplay/Map/doodlescene.xml");
             //playerbulletparam has set shorthand
             BulletHandler.Instance.Playerbulletparam = playerbulletparameter;
             BulletHandler.Instance.Animatedgraphicsparam = animatedparameter;
-           // map1.LoadContent();
-            LoadTilesandEnemies();//this is the map
-
+            LoadTilesandEnemies();//Load player
+            //Load all images and sounds
             tilesandenemies.LoadContent();
             player.LoadContent();
         }

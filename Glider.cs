@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -30,10 +26,9 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
+            //position smaller than 530, start vibrating
             if(image.Position.X < 530)
             {
-                //randnumber13 = rnd.Next(-2, 2);
-                //velocity.X = -randnumber13;
                 randnumber13 = rnd.Next(-4, 4);
                 velocity.Y = -randnumber13;
                 if (image.Position.X < 0)

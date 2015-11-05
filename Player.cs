@@ -33,24 +33,11 @@ namespace fourcolors
             deathvector = Vector2.Zero;
         }
 
-        //public void SetDying(Rectangle dv)
-        //{
-        //    deathvector = new Rectangle();
-        //    deathvector = dv;
-        //    dying = true;
-        //    //image.IsActive = false;
-        //}
-
         public bool isDead
         { 
             get{ return dead; }
             set { dead = value; }
         }
-
-        //public void Dead(bool v)
-        //{
-        //    dead = v;
-        //}
 
         public bool Dying
         {
@@ -89,7 +76,7 @@ namespace fourcolors
 
         public void Update(GameTime gameTime)
         {
-            //If true I collided
+            //Death handling If true I collided
             if(CollisionManager.Instance.PlayerCollision)
             {
                 ///If collision set is dead to true
@@ -99,8 +86,8 @@ namespace fourcolors
                 SoundManager.Instance.Playexplode();
                 BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X - 30, (int)image.Position.Y);
                 isDead = true;
-                Velocity.X = -300;//Set the coordinates far behind explosion
-                Velocity.Y = 0;
+                image.Position.X = -30;//Set the player of screen to start again
+                
             }
             else
             {
@@ -147,7 +134,7 @@ namespace fourcolors
                         image.SpriteSheetEffect.CurrentFrame.Y = 0;
                     }
                 }
-
+                //Space fires bullets
                 if (InputManager.Instance.KeyPressed(Keys.Space))
                 {
                     //image height and width is given by texture.heigt and texture.width
@@ -155,7 +142,11 @@ namespace fourcolors
                         (int)(image.Position.Y + (image.height / 2)));
                     SoundManager.Instance.PlayPhaser();
                 }
-
+                //After death dies it reset of screen and needs to com to for front
+                if(image.Position.X < 5)
+                {
+                    image.Position.X += 3;
+                }
                 ///<remark>if player not moving this stop animation</remark>
                 //if (Velocity.X == 0 && Velocity.Y == 0)//if the player is not moving
                 //    image.IsActive = false;
