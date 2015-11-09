@@ -54,6 +54,7 @@ namespace fourcolors
             //image.Update(gameTime);
             animatedlife -= 1;
             image.IsActive = true;
+            image.Position.Y += movespeed;
             if (animatedlife == 0)
                 dead = true;
             base.Update(gameTime);

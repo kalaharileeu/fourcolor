@@ -14,8 +14,9 @@ namespace fourcolors
     {
         Loader.parameter animatedgraphicsparam;//large explotion
         Loader.parameter playerbulletparam;
-        Loader.parameter smallexplotion;
+        //Loader.parameter smallexplotion;
         //From xml serialization ready for animated bullets and explosions
+        //Types: playerbullet, smallexplosion, largeexplosion
         List<Loader.parameter> listofparameters; //From xml serialization ready for 
         //Loader.parameter enemybulletparam;//TODO implemment
         List<PlayerBullet> listplayerbullets;
@@ -53,9 +54,17 @@ namespace fourcolors
         //    listenemybullets.Add(new EnemyBullet(enemybulletparam, x, y));
         //}
 
-        public void addloaderparameter(Loader.parameter v)
+        //Populate a list of parameters to instantiate bullets and explosion
+        public void Addloaderparameter(Loader.parameter v)
         {
             listofparameters.Add(v);
+        }
+
+        public void addAnimatedGraphics(int x, int y, string name)
+        {
+            Loader.parameter lp = new Loader.parameter();
+            lp = listofparameters.Find(z => z.animatedtype == name);
+            listanimatedgraphics.Add(new AnimatedGraphics(lp, x, y));
         }
 
         public void addPlayerBullet(int x, int y)
@@ -76,10 +85,10 @@ namespace fourcolors
             listplayerbullets.Add(pb);
         }
 
-       public void clearbullet()
-        {
+       //public void clearbullet()
+       // {
 
-        }
+       // }
 
         public void update(GameTime gametime)
         {

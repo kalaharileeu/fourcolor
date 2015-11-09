@@ -27,22 +27,22 @@ namespace fourcolors
         {
             base.LoadContent();
             SoundManager.Instance.LoadContent();
-            //XmlManager<Loader> paramloader = new XmlManager<Loader>();
             ///The player class variables gets stored in a defferent class
+            /// Two different xml loader for 2 kinds of xml classes
             XmlManager<Loader.parameter> playerloader = new XmlManager<Loader.parameter>();
-            //XmlManager<Loader.parameter> playerbulletloader = new XmlManager<Loader.parameter>();
             XmlManager<map> mapLoader = new XmlManager<map>();
             //loadedparams = paramloader.Load("Content/Gameplay/Explosion/parameters.xml");
             //player loader is the xml manager instance for manual created xml
             playerparameters = playerloader.Load("Content/Gameplay/Player.xml");
             playerbulletparameter = playerloader.Load("Content/Gameplay/Playergadgets.xml");//bullet
             animatedparameter = playerloader.Load("Content/Gameplay/Animatedgraphics.xml");
-            smallexplosion = playerloader.Load("Content/Gameplay/Animatedgraphics.xml");
+            smallexplosion = playerloader.Load("Content/Gameplay/Smallexplotion.xml");
             //use map loader for xml created in Tiled.exe
             tilesandenemies = mapLoader.Load("Content/Gameplay/Map/doodlescene.xml");
             //playerbulletparam has set shorthand
             BulletHandler.Instance.Playerbulletparam = playerbulletparameter;
             BulletHandler.Instance.Animatedgraphicsparam = animatedparameter;
+            BulletHandler.Instance.Addloaderparameter(smallexplosion);
             LoadTilesandEnemies();//Load player
             //Load all images and sounds
             tilesandenemies.LoadContent();

@@ -84,7 +84,7 @@ namespace fourcolors
                 /// TODO: set imortality for a while with new image(create new sprite)
                 BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X, (int)image.Position.Y);
                 SoundManager.Instance.Playexplode();
-                BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X - 30, (int)image.Position.Y);
+                BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X - 30, (int)image.Position.Y, "smallexplosion");
                 isDead = true;
                 image.Position.X = -30;//Set the player of screen to start again
                 
