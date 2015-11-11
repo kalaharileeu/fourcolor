@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace fourcolors
 {
+    /// <summary>
+    /// The tileset get instantiated thought the XmlManager and contains information about the tilesset to be used.
+    /// </summary>
     public class tileset
     {
         [XmlAttribute]

@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using System.Xml.Serialization;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 using System.Diagnostics;
@@ -51,7 +47,6 @@ namespace fourcolors
         public string data;
         [XmlIgnore]
         public Image Image;
-        //string state;
         List<Tile> underlayTiles;
 
         public string Data
@@ -77,7 +72,7 @@ namespace fourcolors
             //string decodedString = Encoding.UTF8.GetString(encodeddata);//not needed
 
             List<int> tile_ids = new List<int>();
-            for (int j = 0; j < (150 * 15); j++)//fix this (the 150 * 15) should pull from xml
+            for (int j = 0; j < (150 * 15); j++)//TODO: fix this (the 150 * 15) should pull from xml
             {
                 int i = j * 4;
                 //int c = decodedString[i];//not needed
@@ -85,17 +80,15 @@ namespace fourcolors
 
                 if (h < 0)
                 {
-                    int cp = 256 + h;//not sure what this does
-                    tile_ids.Add(cp);//not sure what this does
+                    int cp = 256 + h;//
+                    tile_ids.Add(cp);//
                 }
                 else
                 {
                     tile_ids.Add(h);
                 }
             }
-
             Vector2 position = -tileDimensions;
-
             int numImageCol = (Image.width - margin)/(tilewidth + 2);//the (width + 2) is sell width + margin
 
             //The backfround range is 20 by 15: 
@@ -137,6 +130,7 @@ namespace fourcolors
         {
             foreach (Tile tile in underlayTiles)
             {
+                //This is to check for collision.
                 tile.Update(gameTime, playerrect);
                 tile.scroll(1);
             }

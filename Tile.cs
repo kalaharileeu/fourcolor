@@ -20,11 +20,6 @@ namespace fourcolors
             get { return position; }
         }
 
-        public void scroll(int x)
-        {
-            position.X -= GameplayScreen.scrollspeed;
-        }
-
         public void LoadContent(Vector2 position, Rectangle sourceRect, string state)
         {
             deathtile2d = new Vector2(0, 0);
@@ -37,7 +32,12 @@ namespace fourcolors
         public void UnloadContent()
         { 
         }
-        
+
+        public void scroll(int x)
+        {
+            position.X -= GameplayScreen.scrollspeed;
+        }
+
         public void Update(GameTime gameTime, Rectangle playerrect)
         {
             deathtile2d.X = 0;

@@ -26,8 +26,8 @@ namespace fourcolors
         /// </summary>
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;//some int 639
-            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;//some int 480
+            graphics.PreferredBackBufferWidth = (int)ScreenManager.Instance.Dimensions.X;//int 639
+            graphics.PreferredBackBufferHeight = (int)ScreenManager.Instance.Dimensions.Y;//int 480
             graphics.ApplyChanges();
             base.Initialize();
         }
