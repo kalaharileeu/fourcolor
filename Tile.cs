@@ -38,7 +38,7 @@ namespace fourcolors
             position.X -= GameplayScreen.scrollspeed;
         }
 
-        public void Update(GameTime gameTime, Rectangle playerrect)
+        public void Update(GameTime gameTime, Player player)
         {
             deathtile2d.X = 0;
             deathtile2d.Y = 0;
@@ -47,10 +47,11 @@ namespace fourcolors
                 Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y,
                     sourceRect.Width, sourceRect.Height);
 
-                if(Collision.RectRect(tileRect, playerrect))
+                if(Collision.RectRect(tileRect, player.GetCurrentRect()))
                 {
-                    deathtile2d.X = playerrect.X;
-                    deathtile2d.Y = playerrect.Y;
+                    player.DyinginTiles = true;
+                    //deathtile2d.X = playerrect.X;
+                    //deathtile2d.Y = playerrect.Y;
                 }
             }
             //return the point of collisionplayer vs tile

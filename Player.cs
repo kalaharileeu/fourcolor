@@ -18,7 +18,7 @@ namespace fourcolors
         Image image;
         float movespeed;
         string animatedtype;
-        bool dying = false;
+        bool dyingtiles = false;
         bool dead = false;
 
         Vector2 deathvector;
@@ -39,9 +39,10 @@ namespace fourcolors
             set { dead = value; }
         }
 
-        public bool Dying
+        public bool DyinginTiles
         {
-            get { return dying; }
+            get { return dyingtiles; }
+            set { dyingtiles = value;  }
         }
 
         public Rectangle GetCurrentRect()
@@ -77,7 +78,7 @@ namespace fourcolors
         public void Update(GameTime gameTime)
         {
             //Death handling If true I collided
-            if(CollisionManager.Instance.PlayerCollision)
+            if((CollisionManager.Instance.PlayerCollision) || (dyingtiles))
             {
                 ///If collision set is dead to true
                 /// move the player back by 300 on the X axis
@@ -86,7 +87,9 @@ namespace fourcolors
                 SoundManager.Instance.Playexplode();
                 BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X - 30, (int)image.Position.Y, "smallexplosion");
                 isDead = true;
+                dyingtiles = false;
                 image.Position.X = -30;//Set the player of screen to start again
+                image.Position.Y = 100;
                 
             }
             else

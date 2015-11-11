@@ -79,7 +79,7 @@ namespace fourcolors
             player.Update(gameTime);
             //map1.Update(gameTime, player);
             //this is the map
-            tilesandenemies.Update(gameTime, player.GetCurrentRect());
+            tilesandenemies.Update(gameTime, player);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -88,8 +88,7 @@ namespace fourcolors
            // map1.Draw(spriteBatch, "Underlay");//Draw map befor the player so that player is ontop
            // map1.Draw(spriteBatch, "Overlay");
             tilesandenemies.Draw(spriteBatch);
-            if(!player.Dying)
-                player.Draw(spriteBatch);
+            player.Draw(spriteBatch);
         }
     }
 }

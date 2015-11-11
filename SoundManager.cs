@@ -46,6 +46,9 @@ namespace fourcolors
 
         public void PlayMusic(){ electro.Play(); }
 
-        public void Playexplode() { explode.Play(); }
+        public void Playexplode()
+        {
+            explode.Play(); 
+        }
     }
 }

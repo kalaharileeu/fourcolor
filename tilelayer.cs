@@ -112,7 +112,8 @@ namespace fourcolors
                     //send coordiantes to crop out the tile
                     //if (tile_ids[n] != 0)
                     //{
-                        tile.LoadContent(position, new Rectangle(margin + col * ((int)tileDimensions.X + spacing), margin + row * ((int)tileDimensions.Y + spacing),
+                        tile.LoadContent(position, new Rectangle(margin + col * ((int)tileDimensions.X + spacing),
+                            margin + row * ((int)tileDimensions.Y + spacing),
                             (int)tileDimensions.X, (int)tileDimensions.Y), state);//pass state to load content
                         underlayTiles.Add(tile);
                     }
@@ -126,12 +127,12 @@ namespace fourcolors
             Image.UnloadContent();
         }
 
-        public void Update(GameTime gameTime, Rectangle playerrect)//optimise
+        public void Update(GameTime gameTime, Player player)//optimise
         {
             foreach (Tile tile in underlayTiles)
             {
                 //This is to check for collision.
-                tile.Update(gameTime, playerrect);
+                tile.Update(gameTime, player);
                 tile.scroll(1);
             }
         }
