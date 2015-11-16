@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
@@ -28,11 +23,14 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            //move speed is the constant movespeed for all enemies 2.0f
-            if(!dead)
+            if (!dead)
             {
+                ///This is just to keep up with scroll speed,
+                ///Will look static
                 velocity.X = -movespeed;
             }
+
+            //move speed is the constant movespeed for all enemies 2.0f
             base.Update(gameTime);
         }
 

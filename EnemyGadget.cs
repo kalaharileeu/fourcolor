@@ -56,7 +56,11 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            if(!dead)
+            ///Static and mobile enemy inherit from this class, although static
+            /// enemy does not move a lot on the X Y axis it still needs below to
+            /// maybe jitter or do some other local movement, or scroll
+            //Standard movement or mobile enemy
+            if (!dead)
             {
                 image.Position.X += velocity.X;
                 image.Position.Y += velocity.Y;

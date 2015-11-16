@@ -3,8 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    class Boss : MobileEnemy
+    class Boss : StaticEnemy
     {
+        //Boss does not move far on the X plane so pretty static
         public Boss(ObjectGroup.MapObject enemyobject) : base(enemyobject)
         {
         }
@@ -21,7 +22,7 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-                //velocity.Y = -randnumber13;
+
             if (image.Position.X < 0)
             {
                 Dead();

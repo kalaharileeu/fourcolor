@@ -22,7 +22,8 @@ namespace fourcolors
 
         public void LoadContent(Vector2 position, Rectangle sourceRect, string state)
         {
-            deathtile2d = new Vector2(0, 0);
+            //This is the tile that player crash into
+           // deathtile2d = new Vector2(0, 0); 
             
             this.position = position;
             this.sourceRect = sourceRect;
@@ -40,8 +41,8 @@ namespace fourcolors
 
         public void Update(GameTime gameTime, Player player)
         {
-            deathtile2d.X = 0;
-            deathtile2d.Y = 0;
+            //deathtile2d.X = 0;
+            //deathtile2d.Y = 0;
             if(state == "Solid")//Below is the collision handling
             {
                 Rectangle tileRect = new Rectangle((int)Position.X, (int)Position.Y,

@@ -21,15 +21,22 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            //position smaller than 530, start vibrating
-            if (image.Position.X < 530)
+            //if position larger than 640 only scroll speed
+            if (image.Position.X < 640)
             {
-                velocity.Y = -3;
-                if (image.Position.X < 0)
+                if (image.Position.X < 530)
                 {
-                    Dead();
+                    //Xaxis movespeed increases
+                    movespeed += 2;
+                    if (image.Position.X < -10)
+                    {
+                        Dead();
+                    }
                 }
             }
+            else
+                movespeed = 1.0f;//this is the same as the scroll speed
+
             base.Update(gameTime);
         }
 

@@ -38,7 +38,7 @@ namespace fourcolors
             animatedparameter = playerloader.Load("Content/Gameplay/Animatedgraphics.xml");
             smallexplosion = playerloader.Load("Content/Gameplay/Smallexplotion.xml");
             //use map loader for xml created in Tiled.exe
-            tilesandenemies = mapLoader.Load("Content/Gameplay/Map/doodlescene.xml");
+            tilesandenemies = mapLoader.Load("Content/Gameplay/Map/doodle_ink.xml");
             //playerbulletparam has set shorthand
             BulletHandler.Instance.Playerbulletparam = playerbulletparameter;
             BulletHandler.Instance.Animatedgraphicsparam = animatedparameter;

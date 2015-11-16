@@ -3,8 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    class Floater : MobileEnemy
+    class Floater : StaticEnemy
     {
+        //floater does not move far on the X plane, so static
         public Floater(ObjectGroup.MapObject enemyobject) : base(enemyobject)
         {
         }
