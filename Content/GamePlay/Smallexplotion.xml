@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameter>
+  <imagesource>Gameplay/Bullet/smallexplosion</imagesource>
+  <Effects>SpriteSheetEffect</Effects>
+  <movespeed>0</movespeed>
+  <life>50</life>
+  <animatedtype>smallexplosion</animatedtype>
+  <numframesX>2</numframesX>
+  <numframesY>1</numframesY>
+  <dead>false</dead>
+  <dying>false</dying>
+</parameter>
