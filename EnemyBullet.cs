@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    class EnemyBullet : PlayerGadget
+    class EnemyBullet : EnemyWeapons
     {
         int enemyx;
         int enemyy;
-        Vector2 velocity;
 
         public EnemyBullet(Loader.parameter loaderparameters, int x, int y)
         {
-            //image = loaderparameters.image;
+            //imagesource = loaderparameters.imagesource;
             movespeed = loaderparameters.movespeed;
             animatedtype = loaderparameters.animatedtype;
             numframesX = loaderparameters.numframesX;
@@ -26,9 +19,10 @@ namespace fourcolors
             dying = loaderparameters.dying;
             enemyx = x;
             enemyy = y;
-            //image = new Image();
+            //get the image source directly from loaderparameters
+            image = new Image(loaderparameters.imagesource);
+
             LoadContent();
-            //numFrames = 1;
         }
 
         public override void LoadContent()
@@ -45,7 +39,7 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            image.Position.X += 2;
+            image.Position.X -= movespeed;
             base.Update(gameTime);
         }
 

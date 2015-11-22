@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -10,7 +9,6 @@ namespace fourcolors
         int positionx;
         int positiony;
         protected Vector2 velocity;
-
 
         public EnemyGadget(ObjectGroup.MapObject enemyobject)
         {

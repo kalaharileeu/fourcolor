@@ -3,11 +3,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    class PlayerGadget : GameObject
+    class EnemyWeapons : GameObject
     {
-        public PlayerGadget()
+        public EnemyWeapons()
         {
-
         }
 
         public override void LoadContent()
@@ -27,9 +26,7 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            //The player gdget dies if it is larger the 610 position
-            //other than enemy gadget/wepon that move in the other direction
-            if (image.Position.X > 610)
+            if (image.Position.X < 10)
             {
                 dead = true;
             }
