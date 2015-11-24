@@ -47,12 +47,5 @@ namespace fourcolors
         {
             base.Draw(spriteBatch);
         }
-
-
-
-        public bool IsDead
-        {
-            get { return dead; }
-        }
     }
 }

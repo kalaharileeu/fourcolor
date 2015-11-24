@@ -37,5 +37,10 @@ namespace fourcolors
         {
             return new Rectangle((int)image.Position.X, (int)image.Position.Y, image.width, image.height);
         }
+
+        public bool IsDead
+        {
+            get { return dead; }
+        }
     }
 }

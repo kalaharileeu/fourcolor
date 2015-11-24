@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 
 namespace fourcolors
 {
@@ -14,13 +15,14 @@ namespace fourcolors
     {
         Loader.parameter animatedgraphicsparam;//large explotion
         Loader.parameter playerbulletparam;
+        Loader.parameter enemygreenbulletparam;
         //Loader.parameter smallexplotion;
         //From xml serialization ready for animated bullets and explosions
         //Types: playerbullet, smallexplosion, largeexplosion
-        List<Loader.parameter> listofparameters; //From xml serialization ready for 
+        List<Loader.parameter> listofparameters; //From xml serialization ready for
         //Loader.parameter enemybulletparam;//TODO implemment
         List<PlayerBullet> listplayerbullets;
-        List<EnemyBullet> listenemybullets;
+        List<EnemyWeapons> listenemybullets;
         List<AnimatedGraphics> listanimatedgraphics;
         int i;
 
@@ -39,20 +41,37 @@ namespace fourcolors
         public BulletHandler()
         {
             listplayerbullets = new List<PlayerBullet>();
-            listenemybullets = new List<EnemyBullet>();
+            listenemybullets = new List<EnemyWeapons>();
             listanimatedgraphics = new List<AnimatedGraphics>();
             listofparameters = new List<Loader.parameter>();
+        }
+//***************************************GET and SET*****************************
+        public Loader.parameter Playerbulletparam
+        {
+            set { playerbulletparam = value; }
+        }
+
+        public Loader.parameter Enemygreenbulletparam
+        {
+            set { enemygreenbulletparam = value; }
+        }
+
+        public Loader.parameter Animatedgraphicsparam
+        {
+            set { animatedgraphicsparam = value; }
         }
 
         public List<PlayerBullet> Listplayerbullets
         {
             get { return listplayerbullets; }
         }
-
-        //public void addEnemyBullet(int x, int y)
-        //{
-        //    listenemybullets.Add(new EnemyBullet(enemybulletparam, x, y));
-        //}
+//********************************************************************************
+//**************************Add to the available lists***************************
+        public void addEnemyBullet(int x, int y)
+        {
+            listenemybullets.Add((EnemyWeapons)Activator.CreateInstance
+                (Type.GetType("fourcolors." + enemygreenbulletparam.animatedtype), enemygreenbulletparam, x , y));
+        }
 
         //Populate a list of parameters to instantiate bullets and explosion
         public void Addloaderparameter(Loader.parameter v)
@@ -69,32 +88,30 @@ namespace fourcolors
 
         public void addPlayerBullet(int x, int y)
         {
-            if (listplayerbullets.Count > 4)
-                    i++;
-            listplayerbullets.Add(new PlayerBullet(playerbulletparam, x, y));
+            //Only 5 bullets in the list
+            if (listplayerbullets.Count < 5)
+            {
+                listplayerbullets.Add(new PlayerBullet(playerbulletparam, x, y));
+            }
         }
-        //Add in real time a animated graphic to the list(a explosion or something)
+        //Add in real time a animated graphic to the list(a explosion)
         //it will be animated and showed 
         public void addAnimatedGraphics(int x, int y)
         {
             listanimatedgraphics.Add(new AnimatedGraphics(animatedgraphicsparam, x, y));
         }
 
-        public void addPlayerBullet(PlayerBullet pb)
-        {
-            listplayerbullets.Add(pb);
-        }
-
-       //public void clearbullet()
-       // {
-
-       // }
+        //public void addPlayerBullet(PlayerBullet pb)
+        //{
+        //    listplayerbullets.Add(pb);
+        //}
+//***********************************************************************************
 
         public void update(GameTime gametime)
         {
             //remove all the dead bullets
             listplayerbullets.RemoveAll(PlayerBullet => PlayerBullet.IsDead == true);
-            listenemybullets.RemoveAll(EnemyBullet => EnemyBullet.IsDead == true);
+            listenemybullets.RemoveAll(EnemyWeapons => EnemyWeapons.IsDead == true);
             listanimatedgraphics.RemoveAll(AnimatedGraphics => AnimatedGraphics.IsDead == true);
 
             foreach (PlayerBullet pb in listplayerbullets)
@@ -117,16 +134,6 @@ namespace fourcolors
 
             foreach (AnimatedGraphics ag in listanimatedgraphics)
                 ag.Draw(spriteBatch);
-        }
-
-        public Loader.parameter Playerbulletparam
-        {
-            set{ playerbulletparam = value; }
-        }
-
-        public Loader.parameter Animatedgraphicsparam
-        {
-            set{ animatedgraphicsparam = value; }
         }
     }
 }

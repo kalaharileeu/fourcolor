@@ -20,6 +20,8 @@ namespace fourcolors
         Loader.parameter playerbulletparameter;
         Loader.parameter animatedparameter;//this is large explotion
         Loader.parameter smallexplosion;
+        //**********************Enemy weapons and bullets*************************
+        Loader.parameter enemygreenbulletparameter;
         //Loader loadedparams;
         public static int scrollspeed = 1;
 
@@ -34,14 +36,16 @@ namespace fourcolors
             //loadedparams = paramloader.Load("Content/Gameplay/Explosion/parameters.xml");
             //player loader is the xml manager instance for manual created xml
             playerparameters = playerloader.Load("Content/Gameplay/Player.xml");
+            enemygreenbulletparameter = playerloader.Load("Content/Gameplay/Enemy/Enemyweapons.xml");//Enemybullets
             playerbulletparameter = playerloader.Load("Content/Gameplay/Playergadgets.xml");//bullet
             animatedparameter = playerloader.Load("Content/Gameplay/Animatedgraphics.xml");
             smallexplosion = playerloader.Load("Content/Gameplay/Smallexplotion.xml");
             //use map loader for xml created in Tiled.exe
             tilesandenemies = mapLoader.Load("Content/Gameplay/Map/doodle_ink.xml");
             //playerbulletparam has set shorthand
-            BulletHandler.Instance.Playerbulletparam = playerbulletparameter;
-            BulletHandler.Instance.Animatedgraphicsparam = animatedparameter;
+            BulletHandler.Instance.Playerbulletparam = playerbulletparameter;//instance
+            BulletHandler.Instance.Enemygreenbulletparam = enemygreenbulletparameter;//instance
+            BulletHandler.Instance.Animatedgraphicsparam = animatedparameter;//instance
             BulletHandler.Instance.Addloaderparameter(smallexplosion);
             LoadTilesandEnemies();//Load player
             //Load all images and sounds

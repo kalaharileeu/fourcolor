@@ -8,7 +8,6 @@ namespace fourcolors
         public GreenBullet(Loader.parameter loaderparameter, int x, int y) 
             : base(loaderparameter, x, y)
         {
-
         }
 
         public override void LoadContent()

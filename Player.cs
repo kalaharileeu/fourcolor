@@ -35,10 +35,12 @@ namespace fourcolors
 
         public bool isDead
         { 
-            get{ return dead; }
+            get { return dead; }
             set { dead = value; }
         }
-
+        /// <summary>
+        ///Bool value. Collided with tiles
+        /// </summary>
         public bool DyinginTiles
         {
             get { return dyingtiles; }
@@ -50,7 +52,9 @@ namespace fourcolors
             Rectangle collisionRect = new Rectangle((int)image.Position.X, (int)image.Position.Y, image.width, image.height);
             return collisionRect;
         }
-
+        /// <summary>
+        /// Get set the vector wher player died
+        /// </summary>
         public Vector2 Deathvector
         {
             get { return deathvector; }
@@ -90,7 +94,6 @@ namespace fourcolors
                 dyingtiles = false;
                 image.Position.X = -30;//Set the player of screen to start again
                 image.Position.Y = 100;
-                
             }
             else
             {
