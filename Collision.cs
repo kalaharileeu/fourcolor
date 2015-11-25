@@ -7,7 +7,8 @@ namespace fourcolors
     /// </summary>
     public class Collision
     {
-        const int s_buffer = 4;
+
+        const int s_buffer = 15;//use to be 4. Up to increase collision sensitivity
 
         public static bool RectRect(Rectangle A, Rectangle B)
         {

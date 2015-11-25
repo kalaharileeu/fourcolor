@@ -6,7 +6,6 @@
   <MoveSpeed>100</MoveSpeed>
   </comment>
  */
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -20,6 +19,7 @@ namespace fourcolors
         string animatedtype;
         bool dyingtiles = false;
         bool dead = false;
+        bool immortal = false;
 
         Vector2 deathvector;
         Vector2 Velocity;
@@ -85,15 +85,16 @@ namespace fourcolors
             if((CollisionManager.Instance.PlayerCollision) || (dyingtiles))
             {
                 ///If collision set is dead to true
-                /// move the player back by 300 on the X axis
+                /// move the player back to X = -30 Y = 100 on the X axis
                 /// TODO: set imortality for a while with new image(create new sprite)
                 BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X, (int)image.Position.Y);
-                SoundManager.Instance.Playexplode();
-                BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X - 30, (int)image.Position.Y, "smallexplosion");
+                SoundManager.Instance.Playexplode();//Play sound
+                BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X - 30, (int)image.Position.Y, "smallexplosion");//Explosion
                 isDead = true;
                 dyingtiles = false;
-                image.Position.X = -30;//Set the player of screen to start again
+                image.Position.X = -30;//Reseet the player off screen to start again
                 image.Position.Y = 100;
+                immortal = true;//The plyaer needs to be immortal for a while
             }
             else
             {

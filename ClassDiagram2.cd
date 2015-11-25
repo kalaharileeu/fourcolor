@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="fourcolors.GreenBullet" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>GreenBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.EnemyBullet" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAY=</HashCode>
+      <FileName>EnemyBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.EnemyWeapons" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEABAAAAAAgAAAAAAEAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>EnemyWeapons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.GameObject" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEABAAAgAAgAQAAgAAAAAEAQAAAAIQABAADAAAAQ=</HashCode>
+      <FileName>GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.PlayerBullet" Collapsed="true">
+    <Position X="2.5" Y="5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAACgAAAAAAEAAAAAAAAAAAAIQBCAAAAAQ=</HashCode>
+      <FileName>PlayerBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.PlayerGadget" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEABAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>PlayerGadget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.GameScreen" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAQCEAAAAAAAAgAAAAAAAAAAAAAAAAQAAQAAAAAAAAQ=</HashCode>
+      <FileName>GameScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.ScreenManager" Collapsed="true">
+    <Position X="8.5" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAgAAAgAAAACAAAIgAABgABABQAAkAEAAAAQ=</HashCode>
+      <FileName>ScreenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.GameplayScreen" Collapsed="true">
+    <Position X="10" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAQAEAAIAgAAAgEAACAAAAAAAAAQAQABAAAAABAAAAQ=</HashCode>
+      <FileName>GameplayScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.SplashScreen" Collapsed="true">
+    <Position X="8" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAgAAAAAAAAAAAAABAAAAAAAAAAAAQ=</HashCode>
+      <FileName>SplashScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.TitleScreen" Collapsed="true">
+    <Position X="12.25" Y="2" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAQQEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>TitleScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.BulletHandler" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAACAIAAAAAAIAAAAgBSBgAAAAbAAAAAgEhAA=</HashCode>
+      <FileName>BulletHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.XmlManager&lt;T&gt;" Collapsed="true">
+    <Position X="11" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>XmlManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Turret" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Turret.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.StaticEnemy" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>StaticEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.EnemyGadget" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAEABAABAAAgAAAAAAIAAAAAAAAEAAAAQACAAAAAQ=</HashCode>
+      <FileName>EnemyGadget.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.tileset" Collapsed="true">
+    <Position X="11" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAABAAAAAAAQEQAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>tileset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.layer" Collapsed="true">
+    <Position X="6.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAkAAAAAAAAAAAAAEARAEAAAQAAAAAAQ=</HashCode>
+      <FileName>tilelayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Tile" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAgAAAEIAAAAEAAACBEAAAAAAAAAAQ=</HashCode>
+      <FileName>Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.SpriteSheetEffect" Collapsed="true">
+    <Position X="14.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAEAAAAAAAAAACAAAAAABAACAAAAAAAgAAAAAAAAQ=</HashCode>
+      <FileName>SpriteSheetEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.ImageEffect" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAEAAAAAAAAAAAEAAAAAAAEAAAAAAAAAAAIAAAAAQ=</HashCode>
+      <FileName>ImageEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.SoundManager" Collapsed="true">
+    <Position X="8.5" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAACAAAAAEAAABIAAAAQAAEAAAAAgQ=</HashCode>
+      <FileName>SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.ScrollingBackground" Collapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ScrollingBackground.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Player" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBEABBABAAAgAQAAgAAAAAEBAAAAAIAAAAgQAEAAQ=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.MenuManager" Collapsed="true">
+    <Position X="5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAIAAAgAAAAAAAAgAAABAAAAAAAAAAQAAAAQ=</HashCode>
+      <FileName>MenuManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.MenuItem" Collapsed="true">
+    <Position X="5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgABAAAAAAIAAAAAA=</HashCode>
+      <FileName>MenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Menu" Collapsed="true">
+    <Position X="5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAmwAAAAQAAACAAABAgAAAAAAAAAAAAgU=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.map" Collapsed="true">
+    <Position X="10" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAgAAAAgAgRBQAAAAAAAAAAAAAAEIAAAAAAAgAQ=</HashCode>
+      <FileName>Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Loader" Collapsed="true">
+    <Position X="11" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>LoadParameters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Intruder" Collapsed="true">
+    <Position X="7.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Intruder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.InputManager" Collapsed="true">
+    <Position X="8.5" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAAAgAAAAAAAAAAAAABAAAAARAAAABBAAAA=</HashCode>
+      <FileName>InputManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Image" Collapsed="true">
+    <Position X="12" Y="0.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>CgYCsAGAAAAgAgYgUAZAAAACEIAAABBAAAMACAAAAAQ=</HashCode>
+      <FileName>Image.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.MobileEnemy" Collapsed="true">
+    <Position X="8" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Glider" Collapsed="true">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASEEAAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Glider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Floater" Collapsed="true">
+    <Position X="6" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Floater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.FadeEffect" Collapsed="true">
+    <Position X="13" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>FadeEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.CollisionManager" Collapsed="true">
+    <Position X="3.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAgAgAAAAAAAAAAAAAAAAABAQAAAQAAAAAgAAAA=</HashCode>
+      <FileName>CollisionManger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Collision" Collapsed="true">
+    <Position X="3.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Collision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.Boss" Collapsed="true">
+    <Position X="4.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Boss.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.AnimatedGraphics" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAEAAAAAAAIAYAAAQAAAAAAAQ=</HashCode>
+      <FileName>AnimatedGraphics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
