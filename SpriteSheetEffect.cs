@@ -41,7 +41,7 @@ namespace fourcolors
             SwitchFrame = 200;//To make animation slower or faster
             FrameCounter = 0;
         }
-
+        //send a refernece to the efffect to manipulate immage values
         public override void LoadContent(ref Image Image)
         {
             base.LoadContent(ref Image);

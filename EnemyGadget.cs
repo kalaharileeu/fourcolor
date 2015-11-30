@@ -18,7 +18,7 @@ namespace fourcolors
             positiony = enemyobject.y;
             deathvector = Vector2.Zero;
             velocity = Vector2.Zero;
-
+            //Parmeters drom Tiled xml
             var match = enemyobject.GetProperties.ListOfProperties.Find(x => x.name == "numFrames");
             if (match != null)
                 numframesX = Convert.ToInt32(match.value);

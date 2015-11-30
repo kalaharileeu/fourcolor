@@ -46,9 +46,9 @@ namespace fourcolors
         public override void Update(GameTime gameTime)
         {
             //image.Update(gameTime);
-            animatedlife -= 1;
+            animatedlife -= 1;//This is for explosions
             image.IsActive = true;
-            image.Position.Y += movespeed;
+            //image.Position.Y += movespeed;
             if (animatedlife == 0)
                 dead = true;
             base.Update(gameTime);

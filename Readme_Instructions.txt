@@ -18,3 +18,10 @@ Movement and scroll
 ---Tile (Environment)
 Tiles do not move but they scroll, with a certian scroll speed. So the Update function check for collision
 and the scroll function do the movement or scroll.
+
+
+What to do next.
+-implement score/ lives
+-Soundeffects for enemies to be sorted out
+-player imartality
+-bullet for intruder

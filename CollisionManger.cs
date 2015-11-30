@@ -53,6 +53,7 @@ namespace fourcolors
                         {
                             eg.Dead();
                             pb.Dead();
+                            ScoreManager.Instance.Scoreincrement();
                         }
                         //Rectangle.Intersect(recct, rect)
                     }
@@ -61,6 +62,7 @@ namespace fourcolors
                     {
                         eg.Dead();
                         playercollision = true;
+                        ScoreManager.Instance.Scoredecrement();
                     }
                 }
             }

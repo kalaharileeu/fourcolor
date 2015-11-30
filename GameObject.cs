@@ -25,6 +25,5 @@ namespace fourcolors
         abstract public void Update(GameTime gameTime);
         abstract public void Draw(SpriteBatch spriteBatch);
         abstract public Rectangle GetCurrentRect();
-
     }
 }

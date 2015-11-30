@@ -194,10 +194,19 @@ namespace fourcolors
                     effect.Value.Update(gameTime);
             }
         }
-
+        //this is mostly for single frame sprites or multiframe with spritesheet effects
         public void Draw(SpriteBatch spriteBatch)
         {
             origin = new Vector2(SourceRect.Width / 2, SourceRect.Height / 2);//this if mainly for a zoom affect
+            spriteBatch.Draw(Texture, Position + origin, SourceRect, Color.White * Alpha,
+                0.0f, origin, Scale, SpriteEffects.None, 0.0f);
+        }
+
+        //no image effects, but draw a specific frame in a multiframe sprite ex. for Scores
+        public void Draw(SpriteBatch spriteBatch, int framenumberx, int framenumbery)
+        {
+            SourceRect = new Rectangle(framenumberx * width,
+                framenumbery * height, width, height);//cast to int, rectangle takes int
             spriteBatch.Draw(Texture, Position + origin, SourceRect, Color.White * Alpha,
                 0.0f, origin, Scale, SpriteEffects.None, 0.0f);
         }
