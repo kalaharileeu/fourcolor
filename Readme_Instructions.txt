@@ -19,9 +19,27 @@ Movement and scroll
 Tiles do not move but they scroll, with a certian scroll speed. So the Update function check for collision
 and the scroll function do the movement or scroll.
 
+Player behaviour
+-player imartalit
+The plyer need some hysteresis between dying - responing - dying. The are situation where this can happen too quick
+in succession. Some immortality need to be in the proces to give a time delay betwwen responing - immortality(few seconds) - dying
+- the player bullets needs to be limited, else it is too easy. Only 4 - 5 bullets allow at any one time in the bullet list
+
+The Score counter
+-The score manager is a singleton class where plyars the mostly the collsion functionality will register the score.
+Incremment or decrement functions to add/ subtrack from the score
+
+GameGadget and EnemyGadget inherit from GameObject(Abstract)
+-Both inherit from Game object, subclasses instantiated by map.cs, data from xml deserialization
+-Score uses a special oveloaded Image draw function, because it is a multi image sprite but 
+the sprite is not animated by spritesheet effect. It is animated as the score ticks over.
+So it is manual animation effect. Pretty happy with this outcome.
+All GameGadget that give info will probable be done by this manual animation effect.
+
 
 What to do next.
 -implement score/ lives
 -Soundeffects for enemies to be sorted out
 -player imartality
 -bullet for intruder
+
