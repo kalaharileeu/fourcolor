@@ -11,11 +11,6 @@ base class for all the Creator types. Create GameObjectFactory.h and declare thi
 class at the top of the file.
 */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace fourcolors
 {
     abstract class BaseCreator
