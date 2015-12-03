@@ -31,7 +31,7 @@ namespace fourcolors
         {
             Layer = new List<layer>();
             TileDimensions = Vector2.Zero;
-            objectgroups = new List<ObjectGroup>();
+            objectgroups = new List<ObjectGroup>();//holds the initialization data
             maplistenemies = new List<EnemyGadget>();
             maplistgamegadgets = new List<GameGadgets>();
         }
