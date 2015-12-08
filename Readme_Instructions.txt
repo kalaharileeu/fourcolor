@@ -38,9 +38,9 @@ All GameGadget that give info will probable be done by this manual animation eff
 
 
 What to do next.
+-Collsion player with enemy bullets
 -implement score/ lives
 -Soundeffects for enemies to be sorted out
-
 -bullet for intruder
 -implement offscreen boundaries for player
 -implement power for Boss, take multiple hits and bullets for boss

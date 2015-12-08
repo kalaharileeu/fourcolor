@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameter>
+  <imagesource>Gameplay/Enemy/bullet2</imagesource>
+  <Effects></Effects>
+  <movespeed>3</movespeed>
+  <life>1</life>
+  <animatedtype>GreenBullet</animatedtype>
+  <numframesX>1</numframesX>
+  <numframesY>1</numframesY>
+  <dead>false</dead>
+  <dying>false</dying>
+</parameter>

@@ -3,9 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
-    class GreenBullet : EnemyBullet
+    class VerticalBullet : EnemyBullet
     {
-        public GreenBullet(Loader.parameter loaderparameter, int x, int y)
+        public VerticalBullet(Loader.parameter loaderparameter, int x, int y) 
             : base(loaderparameter, x, y)
         {
         }
@@ -29,7 +29,7 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            image.Position.X -= movespeed;
+            image.Position.Y -= (movespeed * 2 );
             base.Update(gameTime);
         }
     }

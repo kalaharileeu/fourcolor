@@ -5,6 +5,8 @@ namespace fourcolors
 {
     class Turret : StaticEnemy
     {
+        float accumulate = 0;
+
         public Turret(ObjectGroup.MapObject enemyobject) : base(enemyobject)
         {
         }
@@ -21,8 +23,17 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-
-            if (image.Position.X < -10)
+            if (image.Position.X < 630)
+            {
+                accumulate += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                if (accumulate % 4 > 2.8)//Shoot every 2.8 seconds
+                {
+                    BulletHandler.Instance.addEnemyBullet((int)image.Position.X,
+                        (int)image.Position.Y, "VerticalBullet");
+                    accumulate = 0;
+                }
+            }
+            if (image.Position.X < -30)
             {
                 Dead();
             }

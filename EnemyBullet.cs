@@ -39,7 +39,7 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            image.Position.X -= movespeed;
+
             base.Update(gameTime);
         }
 

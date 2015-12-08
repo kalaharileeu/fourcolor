@@ -67,10 +67,18 @@ namespace fourcolors
         }
 //********************************************************************************
 //**************************Add to the available lists***************************
-        public void addEnemyBullet(int x, int y)
+        public void addEnemyBullet(int x, int y, string type)
         {
-            listenemybullets.Add((EnemyWeapons)Activator.CreateInstance
-                (Type.GetType("fourcolors." + enemygreenbulletparam.animatedtype), enemygreenbulletparam, x , y));
+            if (type == "GreenBullet")
+            {
+                listenemybullets.Add((EnemyWeapons)Activator.CreateInstance
+                    (Type.GetType("fourcolors." + type), enemygreenbulletparam, x, y));
+            }
+            if (type == "VerticalBullet")
+            {
+                listenemybullets.Add((EnemyWeapons)Activator.CreateInstance
+                    (Type.GetType("fourcolors." + type), enemygreenbulletparam, x, y));
+            }
         }
 
         //Populate a list of parameters to instantiate bullets and explosion

@@ -31,26 +31,20 @@ namespace fourcolors
             //    (int)(image.Position.Y + (image.height / 2)));
             //position smaller than 530, start vibrating
 
-            
+
             if (image.Position.X < 630)
             {
                 randnumber13 = rnd.Next(-4, 4);
                 velocity.Y = -randnumber13;
 
                 accumulate += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                if (accumulate % 4 > 2.8)
+                if (accumulate % 4 > 2.8)//Shoot every 2.8 seconds
                 {
-                    BulletHandler.Instance.addEnemyBullet((int)image.Position.X, (int)image.Position.Y);
+                    BulletHandler.Instance.addEnemyBullet((int)image.Position.X,
+                        (int)image.Position.Y, "GreenBullet");
                     accumulate = 0;
                 }
-
-                if (image.Position.X < 0)
-                {
-                    Dead();
-                }
             }
-
-
 
             base.Update(gameTime);
         }
