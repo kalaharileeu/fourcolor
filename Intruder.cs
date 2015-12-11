@@ -28,10 +28,6 @@ namespace fourcolors
                 {
                     //Xaxis movespeed increases
                     movespeed += 2;
-                    if (image.Position.X < -10)
-                    {
-                        Dead();
-                    }
                 }
             }
             else

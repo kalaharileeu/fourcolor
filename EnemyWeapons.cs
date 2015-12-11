@@ -26,7 +26,7 @@ namespace fourcolors
 
         public override void Update(GameTime gameTime)
         {
-            if (image.Position.X < 10)
+            if ((image.Position.X < 10)||(image.Position.Y < 20))
             {
                 dead = true;
             }

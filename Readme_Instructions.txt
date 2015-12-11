@@ -3,7 +3,7 @@
 -Create Loader.Parameter in GameplayScreen.cs
 -populate Loader.Parameter with xml serializer in GamplayScreen.cs
 --Send it to BulletHandler.Instance. with Addloaderparameters
-
+//***************************************Collsion**********************************************
 Collision detection
 ---Tile and Player.
 Tile hanldes its own collision with Collsion.RectRect(). Tiles have "Passive" and "Solid" states, "Passive"
@@ -11,9 +11,14 @@ can not collide but "Solid" can
 Tile should probably not handle its own collision. But I will leave it for now.
 A player reference is sent to tile to the collsion detection, the tile.cs then set the dyingtiles to true
 
+Add Collsion to bullets or player//enemies
+The Collsionmanage.Instance has the player position logged, it can also get all the bullet positions from 
+form the BulletHandle.Instance in a list, it the usses the the Collision(Rect, Rect) function to check for collsions
+true/false. 
+
 ---Enemy Player and Player bullet collision
 This is handled by the collision manager, with Collsion.RectRect() function.
-
+//**************************************Collision ENd******************************************
 Movement and scroll
 ---Tile (Environment)
 Tiles do not move but they scroll, with a certian scroll speed. So the Update function check for collision
@@ -36,9 +41,16 @@ the sprite is not animated by spritesheet effect. It is animated as the score ti
 So it is manual animation effect. Pretty happy with this outcome.
 All GameGadget that give info will probable be done by this manual animation effect.
 
+Add Collsion to bullets or player//enemies
+The Collsionmanage.Instance has the player position logged, it can also get all the bullet positions from 
+form the BulletHandle.Instance in a list, it the usses the the Collision(Rect, Rect) function to check for collsions
+true/false. 
+
+
+The collsionmanager
+
 
 What to do next.
--Collsion player with enemy bullets
 -implement score/ lives
 -Soundeffects for enemies to be sorted out
 -bullet for intruder

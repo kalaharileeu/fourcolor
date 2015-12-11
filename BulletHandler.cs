@@ -60,10 +60,15 @@ namespace fourcolors
         {
             set { animatedgraphicsparam = value; }
         }
-
+        //collsision manager uses this
         public List<PlayerBullet> Listplayerbullets
         {
             get { return listplayerbullets; }
+        }
+        //collision manager uses this
+        public List<EnemyWeapons> ListenemyWeapons
+        {
+            get { return listenemybullets; }
         }
 //********************************************************************************
 //**************************Add to the available lists***************************
@@ -97,7 +102,7 @@ namespace fourcolors
         public void addPlayerBullet(int x, int y)
         {
             //Only 5 bullets in the list
-            if (listplayerbullets.Count < 5)
+            if (listplayerbullets.Count < 4)
             {
                 listplayerbullets.Add(new PlayerBullet(playerbulletparam, x, y));
             }

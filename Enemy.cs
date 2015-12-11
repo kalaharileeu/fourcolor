@@ -28,11 +28,12 @@ namespace fourcolors
                 ///This is just to keep up with scroll speed,
                 ///Will look static
                 velocity.X = -movespeed;
+                if (image.Position.X < -60)
+                {
+                    Dead();
+                }
             }
-            if (image.Position.X < -20)
-            {
-                Dead();
-            }
+
             //move speed is the constant movespeed for all enemies 2.0f
             base.Update(gameTime);
         }

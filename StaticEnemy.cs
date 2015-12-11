@@ -30,6 +30,10 @@ namespace fourcolors
             if (!dead)
             {
                 velocity.X = -movespeed;
+                if (image.Position.X < -70)
+                {
+                    Dead();
+                }
             }
             base.Update(gameTime);
         }

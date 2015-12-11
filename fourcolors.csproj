@@ -43,6 +43,7 @@
     <Compile Include="Collision.cs" />
     <Compile Include="CollisionManger.cs" />
     <Compile Include="Boss.cs" />
+    <Compile Include="Decorator.cs" />
     <Compile Include="EnemyWeapons.cs" />
     <Compile Include="GameGadgets.cs" />
     <Compile Include="GreenBullet.cs" />
@@ -106,6 +107,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GamePlay\Enemy\bullet2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\GamePlay\Enemy\bullet3.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\GamePlay\Enemy\enemy1.png">

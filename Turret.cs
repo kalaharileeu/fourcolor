@@ -33,10 +33,6 @@ namespace fourcolors
                     accumulate = 0;
                 }
             }
-            if (image.Position.X < -30)
-            {
-                Dead();
-            }
             base.Update(gameTime);
         }
 

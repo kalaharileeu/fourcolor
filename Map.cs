@@ -101,6 +101,7 @@ namespace fourcolors
         {
             //Check for collsiions between enemy and plyer and playerbullets
             CollisionManager.Instance.checkEnemyPlayerBulletCollision(maplistenemies);
+            CollisionManager.Instance.CheckPlayEnemyBulletCollsion();
             bool cleanup = false;
             foreach (layer l in Layer)
                 l.Update(gameTime, player);

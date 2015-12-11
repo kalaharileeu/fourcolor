@@ -38,7 +38,7 @@ namespace fourcolors
             get { return playerposition; }
             set { playerposition = value; }
         }
-
+        //also checks player enemycollsion
         public void checkEnemyPlayerBulletCollision(List<EnemyGadget> elist)
         {
             //set the collision to false here
@@ -64,6 +64,20 @@ namespace fourcolors
                         playercollision = true;
                         ScoreManager.Instance.Scoredecrement();
                     }
+                }
+            }
+        }
+        //checks player enemy bullet collsion
+        public void CheckPlayEnemyBulletCollsion()
+        {
+            foreach(EnemyWeapons ew in BulletHandler.Instance.ListenemyWeapons)
+            {
+                //Enemy bullet will always be in the camera shot, only start shooting then
+                if(Collision.RectRect(playerposition, ew.GetCurrentRect()))
+                {
+                    playercollision = true;
+                    ScoreManager.Instance.Scoredecrement();
+                    return;
                 }
             }
         }
