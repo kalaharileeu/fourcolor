@@ -43,6 +43,9 @@
     <Compile Include="Collision.cs" />
     <Compile Include="CollisionManger.cs" />
     <Compile Include="Boss.cs" />
+    <Compile Include="LiveOne.cs" />
+    <Compile Include="LiveThree.cs" />
+    <Compile Include="LiveTwo.cs" />
     <Compile Include="Decorator.cs" />
     <Compile Include="EnemyWeapons.cs" />
     <Compile Include="GameGadgets.cs" />
@@ -154,12 +157,15 @@
     <None Include="ClassDiagram2.cd" />
     <None Include="Content\GamePlay\Map\doodle_ink.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
+    <Content Include="Content\GamePlay\lives.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\GamePlay\numberstrip.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Readme_Instructions.txt" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Content\GamePlay\Player.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>

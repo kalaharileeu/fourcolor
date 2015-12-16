@@ -4,9 +4,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace fourcolors
 {
+    /// <summary>
+    /// The stationary game gadget keepst track of the lives and score
+    /// </summary>
     class StationaryGameGadget : GameGadgets
     {
         protected int scorevalue { get; set; }
+        protected int lives { get; set; }
 
         public StationaryGameGadget(ObjectGroup.MapObject enemyobject) : base(enemyobject)
         {
@@ -26,6 +30,7 @@ namespace fourcolors
         public override void Update(GameTime gameTime)
         {
             scorevalue = ScoreManager.Instance.Score;
+            lives = ScoreManager.Instance.Lives;
             base.Update(gameTime);
         }
 

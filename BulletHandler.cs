@@ -148,5 +148,5 @@ namespace fourcolors
             foreach (AnimatedGraphics ag in listanimatedgraphics)
                 ag.Draw(spriteBatch);
         }
-    }
+     }
 }

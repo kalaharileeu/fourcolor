@@ -38,6 +38,31 @@ namespace fourcolors
             get { return playerposition; }
             set { playerposition = value; }
         }
+
+        public CollisionManager CollisionManager1
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Collision Collision
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         //also checks player enemycollsion
         public void checkEnemyPlayerBulletCollision(List<EnemyGadget> elist)
         {
@@ -62,7 +87,7 @@ namespace fourcolors
                     {
                         eg.Dead();
                         playercollision = true;
-                        ScoreManager.Instance.Scoredecrement();
+                        ScoreManager.Instance.Livesdecrement();
                     }
                 }
             }
@@ -76,7 +101,7 @@ namespace fourcolors
                 if(Collision.RectRect(playerposition, ew.GetCurrentRect()))
                 {
                     playercollision = true;
-                    ScoreManager.Instance.Scoredecrement();
+                    ScoreManager.Instance.Livesdecrement();
                     return;
                 }
             }

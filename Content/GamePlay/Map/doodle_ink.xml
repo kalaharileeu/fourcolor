@@ -25,7 +25,7 @@
     <property name="source" value="SplashScreen/stripepaper"/>
    </properties>
   </object>
-  <object id="5" name="EnemyGadget" type="ScrollingBackground" x="640" y="0" width="30" height="30.6667">
+  <object id="5" name="EnemyGadget" type="ScrollingBackground" x="640" y="0" width="32" height="32">
    <properties>
     <property name="source" value="SplashScreen/stripepaper"/>
    </properties>
@@ -270,6 +270,30 @@
        <property name="Width" value="32"/>
        <property name="numFrames" value="10"/>
        <property name="source" value="Gameplay/numberstrip"/>
+     </properties>
+   </object>
+   <object id="68" name="GameGadgets" type="LiveOne" x="208" y="25" width="30" height="18">
+     <properties>
+       <property name="Height" value="18"/>
+       <property name="Width" value="30"/>
+       <property name="numFrames" value="2"/>
+       <property name="source" value="Gameplay/lives"/>
+     </properties>
+   </object>
+   <object id="69" name="GameGadgets" type="LiveTwo" x="248" y="25" width="30" height="18">
+     <properties>
+       <property name="Height" value="18"/>
+       <property name="Width" value="30"/>
+       <property name="numFrames" value="2"/>
+       <property name="source" value="Gameplay/lives"/>
+     </properties>
+   </object>
+   <object id="70" name="GameGadgets" type="LiveThree" x="288" y="25" width="30" height="18">
+     <properties>
+       <property name="Height" value="18"/>
+       <property name="Width" value="30"/>
+       <property name="numFrames" value="2"/>
+       <property name="source" value="Gameplay/lives"/>
      </properties>
    </object>
  </objectgroup>

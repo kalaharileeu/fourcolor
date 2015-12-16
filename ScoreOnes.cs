@@ -7,9 +7,7 @@ namespace fourcolors
     class ScoreOnes : StationaryGameGadget
     {
         public ScoreOnes(ObjectGroup.MapObject enemyobject) : base(enemyobject)
-        {
-            
-        }
+        { }
 
         public override void LoadContent()
         {
@@ -28,8 +26,9 @@ namespace fourcolors
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            // it is score out of 100 if you mod 10 will give me one's
-            //scorevalues come from StationaryGameObject
+            ///it is score out of 100 if you mod 10 will give me one's
+            ///scorevalues inherited StationaryGameObject
+            ///tells what the spriabtch strip image coordinates are 
             image.Draw(spriteBatch, scorevalue % 10, 0);
         }
     }

@@ -68,24 +68,5 @@ namespace fourcolors
         {
             return new Rectangle((int)image.Position.X, (int)image.Position.Y, image.width, image.height);
         }
-
-        //public void Dead()
-        //{
-        //    dying = true;
-        //    deathvector.X = (int)image.Position.X;
-        //    deathvector.Y = (int)image.Position.Y;
-        //    dead = true;
-        //}
-
-        //public Vector2 DeathVector
-        //{
-        //    //Return the place of dying
-        //    get { return deathvector; }
-        //}
-
-        //public bool Dying
-        //{
-        //    get { return dying; }
-        //}
     }
 }

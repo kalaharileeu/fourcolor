@@ -30,15 +30,17 @@ The plyer need some hysteresis between dying - responing - dying. The are situat
 in succession. Some immortality need to be in the proces to give a time delay betwwen responing - immortality(few seconds) - dying
 - the player bullets needs to be limited, else it is too easy. Only 4 - 5 bullets allow at any one time in the bullet list
 
-The Score counter
--The score manager is a singleton class where plyars the mostly the collsion functionality will register the score.
+The ScoreManager
+-The ScoreManager is a singleton class where plyars the mostly the collision functionality will register the score.
 Incremment or decrement functions to add/ subtrack from the score
+-ScoreManager should also increment and decrement lives.
 
 GameGadget and EnemyGadget inherit from GameObject(Abstract)
--Both inherit from Game object, subclasses instantiated by map.cs, data from xml deserialization
+-Both inherit from GameObject, subclasses instantiated by map.cs, xml deserialization
 -Score uses a special oveloaded Image draw function, because it is a multi image sprite but 
 the sprite is not animated by spritesheet effect. It is animated as the score ticks over.
 So it is manual animation effect. Pretty happy with this outcome.
+Lives will also use this overloaded draw function from Image class
 All GameGadget that give info will probable be done by this manual animation effect.
 
 Add Collsion to bullets or player//enemies
@@ -46,9 +48,7 @@ The Collsionmanage.Instance has the player position logged, it can also get all 
 form the BulletHandle.Instance in a list, it the usses the the Collision(Rect, Rect) function to check for collsions
 true/false. 
 
-
 The collsionmanager
-
 
 What to do next.
 -implement score/ lives

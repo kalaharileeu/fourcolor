@@ -1,14 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-
 namespace fourcolors
 {
-    class ScoreTens : StationaryGameGadget
+    class LiveOne : StationaryGameGadget
     {
-        public ScoreTens(ObjectGroup.MapObject enemyobject) : base(enemyobject)
+        public LiveOne(ObjectGroup.MapObject enemyobject) : base(enemyobject)
         {
-            
+
         }
 
         public override void LoadContent()
@@ -28,11 +27,13 @@ namespace fourcolors
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            ///it is score out of 100 if you mod 10 will give me one's
+            /// it is score out of 100 if you mod 10 will give me one's
             ///scorevalues come from StationaryGameObject
-            ///the below function will give the coordinates of image
-            ///that has to be drawn from the sprite strip
-            image.Draw(spriteBatch, (scorevalue % 100) / 10, 0);
+            ///give image.Draw the sprite strip coordonites
+            if (lives > 0)
+                image.Draw(spriteBatch, 0, 0);
+            else
+                image.Draw(spriteBatch, 1, 0);
         }
     }
 }
