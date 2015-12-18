@@ -45,7 +45,6 @@ namespace fourcolors
                 {
                     XmlManager<ScreenManager> xml = new XmlManager<ScreenManager>();
                     instance = xml.Load("Content/ScreenManager.xml");
-                    //instance = new ScreenManager();
                 }
                 return instance;
             }
@@ -56,7 +55,7 @@ namespace fourcolors
             newScreen = (GameScreen)Activator.CreateInstance(Type.GetType("fourcolors." + screenName));
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
-            Image.Alpha = 0.0f;
+            Image.Alpha = 1.0f;
             IsTransitioning = true;
         }
 

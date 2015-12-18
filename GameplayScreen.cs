@@ -74,6 +74,12 @@ namespace fourcolors
             base.UnloadContent();
             player.UnloadContent();
             tilesandenemies.UnloadContent();
+            ScoreManager.Instance.ResetValues();
+            BulletHandler.Instance.ResetValues();
+            SoundManager.Instance.UnloadContent();
+            player = null;
+            tilesandenemies = null;
+
         }
 
         public override void Update(GameTime gameTime)
@@ -84,6 +90,11 @@ namespace fourcolors
             //map1.Update(gameTime, player);
             //this is the map
             tilesandenemies.Update(gameTime, player);
+            if (ScoreManager.Instance.Lives < 1)
+            {
+                ScreenManager.Instance.ChangeScreens("TitleScreen");
+            }
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -25,6 +25,12 @@ namespace fourcolors
             }
         }
 
+        public void ResetValues()
+        {
+            Score = 0;
+            Lives = 3;
+        }
+
         public void Scoreincrement()
         {
             if (Score >= 999)

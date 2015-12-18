@@ -13,25 +13,25 @@ class at the top of the file.
 
 namespace fourcolors
 {
-    abstract class BaseCreator
-    {
-        public abstract EnemyGadget createGameObject();
-    }
+    //abstract class BaseCreator
+    //{
+    //    public abstract EnemyGadget createGameObject();
+    //}
 
-    class GameObjectFactory
-    {
-        static GameObjectFactory instance;
-        //Constructor in private section: singleton
-        public static GameObjectFactory Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new GameObjectFactory();
-                return instance;
-            }
-        }
-    }
+    //class GameObjectFactory
+    //{
+    //    static GameObjectFactory instance;
+    //    //Constructor in private section: singleton
+    //    public static GameObjectFactory Instance
+    //    {
+    //        get
+    //        {
+    //            if (instance == null)
+    //                instance = new GameObjectFactory();
+    //            return instance;
+    //        }
+    //    }
+    //}
 }
 
 //class GameObjectFactory//Used by Game.cpp

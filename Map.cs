@@ -92,6 +92,11 @@ namespace fourcolors
             {
                 gg.UnloadContent();
             }
+
+            maplistenemies.Clear();
+            maplistgamegadgets.Clear();
+            Layer.Clear();
+            objectgroups.Clear();
         }
         /// <summary>
         /// Map updates the layershere and checks for collsions via collision manager
@@ -147,8 +152,6 @@ namespace fourcolors
             {
                 gg.Draw(spriteBatch);
             }
-
-
         }
     }
 }

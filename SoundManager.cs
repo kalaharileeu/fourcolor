@@ -32,6 +32,11 @@ namespace fourcolors
             explode = content.Load<SoundEffect>("Sound/missileexplode");
         }
 
+        public void UnloadContent()
+        {
+            content.Unload();
+        }
+
         public void PlayPhaser(){ phaser.Play(); }
 
         public void PlayMusic(){ electro.Play(); }

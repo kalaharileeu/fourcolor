@@ -28,6 +28,8 @@ namespace fourcolors
             }
         }
 
+        
+
         public bool PlayerCollision
         {
             get { return playercollision; }
@@ -37,30 +39,6 @@ namespace fourcolors
         {
             get { return playerposition; }
             set { playerposition = value; }
-        }
-
-        public CollisionManager CollisionManager1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public Collision Collision
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
         }
 
         //also checks player enemycollsion

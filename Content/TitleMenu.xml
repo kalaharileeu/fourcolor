@@ -6,25 +6,22 @@
     <LinkType>Screen</LinkType>
     <LinkID>GameplayScreen</LinkID>
     <Image>
-      <Text>TitleMenu</Text>
+      <Text>Play</Text>
     </Image>
   </Item>
-
   <Item>
     <Image>
-      <Text>The</Text>
+      <Text>Highscores</Text>
     </Image>
   </Item>
-
   <Item>
     <Image>
-      <Text>Oions</Text>
+      <Text>Demo</Text>
     </Image>
   </Item>
-
   <Item>
     <Image>
-      <Text>Cred</Text>
+      <Text>Advanced</Text>
     </Image>
   </Item>
 </Menu>

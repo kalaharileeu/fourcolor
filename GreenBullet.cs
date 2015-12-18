@@ -13,13 +13,14 @@ namespace fourcolors
         public override void LoadContent()
         {
             base.LoadContent();
+            image.height = 16;
+            image.width = 16;
         }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
-            image.height = 16;
-            image.width = 16;
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)

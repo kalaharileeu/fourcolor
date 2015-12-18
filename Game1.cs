@@ -77,7 +77,7 @@ namespace fourcolors
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Crimson);
 
             //drawing code here
             spriteBatch.Begin();
@@ -85,6 +85,7 @@ namespace fourcolors
             spriteBatch.End();
 
             base.Draw(gameTime);
+
         }
     }
 }

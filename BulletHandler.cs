@@ -24,7 +24,7 @@ namespace fourcolors
         List<PlayerBullet> listplayerbullets;
         List<EnemyWeapons> listenemybullets;
         List<AnimatedGraphics> listanimatedgraphics;
-        int i;
+        //int i;
 
         private static BulletHandler instance;
 
@@ -44,6 +44,14 @@ namespace fourcolors
             listenemybullets = new List<EnemyWeapons>();
             listanimatedgraphics = new List<AnimatedGraphics>();
             listofparameters = new List<Loader.parameter>();
+        }
+        //When the Game is played in second round all the lists needes to clear
+        public void ResetValues()
+        {
+            listplayerbullets.Clear();
+            listenemybullets.Clear();
+            listanimatedgraphics.Clear();
+            listofparameters.Clear();
         }
 //***************************************GET and SET*****************************
         public Loader.parameter Playerbulletparam
@@ -114,10 +122,7 @@ namespace fourcolors
             listanimatedgraphics.Add(new AnimatedGraphics(animatedgraphicsparam, x, y));
         }
 
-        //public void addPlayerBullet(PlayerBullet pb)
-        //{
-        //    listplayerbullets.Add(pb);
-        //}
+
 //***********************************************************************************
 
         public void update(GameTime gametime)
