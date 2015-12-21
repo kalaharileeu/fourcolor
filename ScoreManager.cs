@@ -49,6 +49,7 @@ namespace fourcolors
             if (Score <= 0)
             {
                 if (overflow > 0)overflow -= 1;
+
             }
             else
             {  Score -= 1; }

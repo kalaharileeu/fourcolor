@@ -58,14 +58,13 @@ namespace fourcolors
                             pb.Dead();
                             ScoreManager.Instance.Scoreincrement();
                         }
-                        //Rectangle.Intersect(recct, rect)
                     }
                     //check for player enemy collision
                     if (Collision.RectRect(playerposition, eg.GetCurrentRect()))
                     {
                         eg.Dead();
                         playercollision = true;
-                        ScoreManager.Instance.Livesdecrement();
+                        //ScoreManager.Instance.Livesdecrement();
                     }
                 }
             }
@@ -79,7 +78,7 @@ namespace fourcolors
                 if(Collision.RectRect(playerposition, ew.GetCurrentRect()))
                 {
                     playercollision = true;
-                    ScoreManager.Instance.Livesdecrement();
+                   // ScoreManager.Instance.Livesdecrement();
                     return;
                 }
             }

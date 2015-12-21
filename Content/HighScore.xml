@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Score>
+  <Item>
+    <Name>Mike</Name>
+    <Value>20</Value>
+  </Item>
+  <Item>
+    <Name>john</Name>
+    <Value>30</Value>
+  </Item>
+</Score>

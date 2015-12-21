@@ -20,7 +20,7 @@ namespace fourcolors
         bool dyingtiles = false;//crashed?
         bool dead = false;//dead or alive
         bool immortal = false;//After death immortal for a while
-        const float immortaltime = 1.0f;
+        const float immortaltime = 3.0f;
         float accumulatedtime = 0;
         Vector2 deathvector;
         Vector2 Velocity;
@@ -88,8 +88,9 @@ namespace fourcolors
             {
                 isDead = false;
                 accumulatedtime += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                if (accumulatedtime > immortaltime)
+                 if (accumulatedtime > immortaltime)
                 {
+
                     BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X - 30, (int)image.Position.Y, "smallexplosion");//Explosion
                     accumulatedtime = 0;
                     immortal = false;//set immortal to false after immortla time done
@@ -105,12 +106,13 @@ namespace fourcolors
                     /// TODO: set imortality for a while with new image(create new sprite)
                     BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X, (int)image.Position.Y);
                     SoundManager.Instance.Playexplode();//Play sound
+                    ScoreManager.Instance.Livesdecrement();
                     BulletHandler.Instance.addAnimatedGraphics((int)image.Position.X - 30, (int)image.Position.Y, "smallexplosion");//Explosion
                     isDead = true;
                     dyingtiles = false;
                     image.Position.X = -30;//Reseet the player off screen to start again
                     image.Position.Y = 100;
-                    immortal = true;//The plyaer needs to be immortal for a while
+                    immortal = true;//The playar needs to be immortal for a while
                 }
             }
 

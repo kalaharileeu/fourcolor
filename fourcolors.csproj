@@ -180,6 +180,10 @@
     <Content Include="Content\GamePlay\numberstrip.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Content\HighScore.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Readme_Instructions.txt" />
     <None Include="Content\GamePlay\Player.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
