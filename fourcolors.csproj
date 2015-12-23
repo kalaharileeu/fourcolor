@@ -58,6 +58,7 @@
     <Compile Include="Collision.cs" />
     <Compile Include="CollisionManger.cs" />
     <Compile Include="Boss.cs" />
+    <Compile Include="GameBounderies.cs" />
     <Compile Include="LiveOne.cs" />
     <Compile Include="LiveThree.cs" />
     <Compile Include="LiveTwo.cs" />
@@ -249,6 +250,7 @@
     </None>
     <None Include="Content\TitleMenu.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <Content Include="Content\SplashScreen\stripepaper.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

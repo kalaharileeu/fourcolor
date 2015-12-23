@@ -30,8 +30,6 @@ namespace fourcolors
             //BulletHandler.Instance.addEnemyBullet((int)(image.Position.X + image.width),
             //    (int)(image.Position.Y + (image.height / 2)));
             //position smaller than 530, start vibrating
-
-
             if (image.Position.X < 630)
             {
                 randnumber13 = rnd.Next(-4, 4);

@@ -173,9 +173,22 @@ namespace fourcolors
                 //if (Velocity.X == 0 && Velocity.Y == 0)//if the player is not moving
                 //    image.IsActive = false;
             }
-                //BulletHandler.Instance.update(gameTime);//Move to map
+            //BulletHandler.Instance.update(gameTime);//Move to map
+            ///****Set up the boundaries within which the player cna move*****
+            if(image.Position.Y < GameBounderies.Instance.CameraYmin)
+            {
+                ///if player hits the boundary kick it away
+                image.Position.Y += 10;
+
+            }
+            if(image.Position.X > GameBounderies.Instance.CameraXmax)
+            {
+                image.Position.X -= 10;
+            }
+            //****end boundary checks
+             image.Position += Velocity;
             image.Update(gameTime);
-            image.Position += Velocity;
+
             //Register player position for collision handling
             CollisionManager.Instance.Playerposition = new Rectangle((int)image.Position.X, 
                 (int)image.Position.Y, image.width, image.height);
