@@ -45,29 +45,19 @@ namespace fourcolors
                 }
                 //moving algorithm
 
-                if (x < 10)
-                {
-                    x += 1;
-                    velocity.X = -2;
-                }
-                else if (y < 10)
+                if (y < 100)
                 {
                     y += 1;
                     velocity.Y = -1;
                 }
-                else if (y > 20)
+                else
                 {
-                    velocity.X = 3;
-                    x += 1;
-                }
-                else if (x > 20)
-                {
-                    y += 1;
                     velocity.Y = 1;
+                    y += 1;
                 }
-                else if (y > 20)
+                velocity.X = 1;
+                if (y > 200)
                 {
-                    x = 0;
                     y = 0;
                 }
             }

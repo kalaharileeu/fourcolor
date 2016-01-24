@@ -39,7 +39,7 @@ namespace fourcolors
 
         public void PlayPhaser(){ phaser.Play(); }
 
-        public void PlayMusic(){ electro.Play(); }
+        public void PlayMusic(){ electro.Play();}
 
         public void Playexplode(){ explode.Play(); }
     }

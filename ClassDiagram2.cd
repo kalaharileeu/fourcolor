@@ -116,14 +116,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.BulletHandler" Collapsed="true">
-    <Position X="21.5" Y="6" Width="1.5" />
+    <Position X="17.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAABABCAIAAAAAAIAAAAgBSBgAAAAbAAAAAgEhAA=</HashCode>
+      <HashCode>AAQAAABABCAIAAAAAAIIAAAgBSBgAAAATAAAAAgEhAA=</HashCode>
       <FileName>BulletHandler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.XmlManager&lt;T&gt;" Collapsed="true">
-    <Position X="14" Y="10.5" Width="1.5" />
+    <Position X="12.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>XmlManager.cs</FileName>
@@ -175,14 +175,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.tileset" Collapsed="true">
-    <Position X="12.25" Y="10.5" Width="1.5" />
+    <Position X="12.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAABAAAAAAAQEQAAAAAAAAAAAAAAAEA=</HashCode>
       <FileName>tileset.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.layer" Collapsed="true">
-    <Position X="5.5" Y="9.25" Width="1.5" />
+    <Position X="14" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAEAAAAAAAAkAAAAAAAAAAAAAEARAEAAAQAAAAAAQ=</HashCode>
       <FileName>tilelayer.cs</FileName>
@@ -220,7 +220,7 @@
   <Class Name="fourcolors.ScoreManager" Collapsed="true">
     <Position X="13.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAKAAAAAAAAhAAgAAAAAAAABAAAACQAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAKAAAAAAAAhAAgAIAAAAAABAAAACQAAAQAAAAAA=</HashCode>
       <FileName>ScoreManager.cs</FileName>
       <NewMemberFileName>SoundManager.cs</NewMemberFileName>
     </TypeIdentifier>
@@ -241,14 +241,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.Player" Collapsed="true">
-    <Position X="22" Y="8" Width="1.5" />
+    <Position X="19.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQBEAFBABAAAgAQAAgAAAAAFBAAAAAIAAAAgQAEAAQ=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.MenuManager" Collapsed="true">
-    <Position X="12.25" Y="9.5" Width="1.5" />
+    <Position X="12.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAEAAAAIAAAgAAAAAAAAgAAABAAAAAAAAAAQAAAAQ=</HashCode>
       <FileName>MenuManager.cs</FileName>
@@ -269,7 +269,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.map" Collapsed="true">
-    <Position X="7.5" Y="9.25" Width="1.5" />
+    <Position X="14" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAEAgAAAAgAgRBQAAAAAAAEAAAAAAEIAAAAAAAgAQ=</HashCode>
       <FileName>Map.cs</FileName>
@@ -358,14 +358,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.CollisionManager" Collapsed="true">
-    <Position X="24.25" Y="6" Width="1.5" />
+    <Position X="17.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAgAgAAAAAAAAAAAAAAAAABAQAAQQAAAAAgAAAA=</HashCode>
       <FileName>CollisionManger.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="fourcolors.Collision" Collapsed="true">
-    <Position X="24.25" Y="7.25" Width="1.5" />
+    <Position X="19.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Collision.cs</FileName>
@@ -380,7 +380,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAEAAAABgAAAAAAQ=</HashCode>
       <FileName>Boss.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -519,6 +519,13 @@
     <TypeIdentifier>
       <HashCode>AAQAEAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>LiveTwo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fourcolors.SoundManager" Collapsed="true">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACEAAAAAAAAAAACAAAAAEAAABIAAAAQAAEAAAAAgQ=</HashCode>
+      <FileName>SoundManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Tahoma" Size="8.25" />
